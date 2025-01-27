@@ -1,0 +1,1056 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mafoy africa Safaris | Luxury Safari Experience</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+      /* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f8f8f8;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header Section */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    color: #ffffff; /* White text */
+    background-color: #d99d42; /* Golden orange background for the header */
+    width: 100%; /* Ensure the golden orange color covers the entire width */
+    position: relative; /* Positioning for menu button inside header */
+}
+
+/* Logo */
+.logo {
+    display: flex;
+    align-items: center;
+    color: #ffffff; /* White text for logo */
+    background-color: #d99d42; /* Golden orange background for logo */
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.logo img {
+    width: 50px;
+    margin-right: 10px;
+}
+
+.logo span {
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+/* Mobile Menu Button */
+.menu-btn {
+    display: flex;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
+    position: absolute; /* Position absolutely inside the header */
+    right: 20px; /* Align the button to the right inside the header */
+    background-color: transparent; /* No background for the button itself */
+    padding: 10px; /* Add padding to make button area clickable */
+}
+
+.menu-btn div {
+    width: 30px;
+    height: 4px;
+    background-color: #ffffff; /* White color for mobile menu lines */
+}
+
+/* Mobile Navigation */
+.mobile-nav {
+    display: none;
+    flex-direction: column;
+    background-color: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+}
+
+.mobile-nav.active {
+    display: flex;
+}
+
+.mobile-nav ul {
+    list-style: none;
+    width: 100%;
+    padding: 0;
+}
+
+.mobile-nav ul li {
+    width: 100%;
+}
+
+.mobile-nav ul li a {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #333; /* Dark text color */
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.mobile-nav ul li a:hover {
+    background-color: #f4f4f4;
+    color: #b96329; /* Burnt orange color on hover */
+}
+
+/* Desktop View */
+@media (min-width: 769px) {
+    header {
+        padding: 10px 5%;
+        display: flex;
+        justify-content: space-between; /* Align logo and menu at opposite ends */
+        align-items: center;
+    }
+
+    .menu-btn {
+        display: none;
+    }
+
+    /* Hide Menu Text in desktop view */
+    .menu-text {
+        display: none;
+    }
+
+    /* Align the navigation to the right */
+    header nav {
+        margin-left: auto; /* Push navigation to the right */
+    }
+
+    header nav ul {
+        display: flex;
+        list-style: none;
+        gap: 20px;
+    }
+
+    header nav ul li {
+        position: relative;
+    }
+
+    header nav ul li a {
+        text-decoration: none;
+        color: #ffffff; /* White text for navigation items */
+        font-weight: 600;
+        transition: color 0.3s;
+    }
+
+    header nav ul li a:hover {
+        color: #b96329; /* Burnt orange color on hover */
+    }
+
+    /* Dropdown Styling */
+    .dropdown {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: white;
+        min-width: 200px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+    }
+
+    /* Show the dropdown when hovering over the parent */
+    header nav ul li:hover .dropdown {
+        display: block;
+    }
+
+    .dropdown li {
+        width: 100%;
+    }
+
+    .dropdown a {
+        display: block;
+        padding: 10px 15px;
+        color: #333;
+    }
+
+    .dropdown a:hover {
+        background-color: #f4f4f4;
+    }
+
+    /* Update logo background to golden orange for desktop view */
+    .logo {
+        background-color: #d99d42; /* Golden orange background for logo on desktop */
+        color: white; /* White text color for logo text */
+    }
+
+    .logo img {
+        width: 50px; /* Adjust logo size */
+        margin-right: 10px;
+    }
+
+    .logo span {
+        font-size: 1.6rem; /* Increase font size for better visibility */
+        font-weight: bold;
+    }
+}
+
+/* Mobile Specific Adjustments */
+@media (max-width: 768px) {
+    /* Make the entire header section golden orange on mobile */
+    header {
+        display: block;
+        padding: 0; /* Remove default padding */
+        background-color: #d99d42; /* Golden orange background for the entire header */
+        width: 100%; /* Make the golden orange background cover the entire width */
+    }
+
+    /* Logo on top of the header in mobile view with full-width golden orange background */
+    .logo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%; /* Full-width */
+        background-color: #ffffff; /* White background for logo part */
+        padding: 30px 0; /* Increased padding for larger header */
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow */
+    }
+
+    .logo img {
+        width: 60px; /* Adjust logo size */
+        margin-right: 10px;
+    }
+
+    .logo span {
+        font-size: 1.6rem; /* Increase font size for better visibility */
+        font-weight: bold;
+        color: #333; /* Dark text color for logo in mobile view */
+    }
+
+    /* Header section with mobile menu icon */
+    header nav {
+        display: none; /* Hidden by default */
+    }
+
+    /* Mobile Navigation visible when active */
+    .mobile-nav.active {
+        display: flex;
+    }
+
+    /* "Menu" Text */
+    .menu-text {
+        color: white;
+        font-size: 1.4rem;
+        font-weight: bold;
+        margin-left: 20px;
+    }
+
+    /* Dropdown menu visibility when "Tours" is clicked */
+    .mobile-nav ul li .dropdown {
+        display: none;
+    }
+
+    .mobile-nav ul li.active .dropdown {
+        display: block;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <!-- Header with Navigation -->
+    <header>
+        <!-- Logo (Visible in both mobile and desktop but different positioning) -->
+        <div class="logo">
+            <img src="mafoy2.jpg.png" alt="Mafoy africa Safaris">
+            <span>Mafoy africa Safaris</span>
+        </div>
+
+        <!-- Mobile Menu Button and "Menu" Text -->
+        <div class="menu-btn" onclick="toggleMobileMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <span class="menu-text">Menu</span> <!-- Menu Text added here -->
+
+        <!-- Desktop Navigation -->
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="destinations.html">Destinations</a></li>
+                <li class="tour-item">
+                    <a href="tours.html" onclick="toggleDropdown(event)">Tours</a>
+                    <ul class="dropdown">
+                        <li><a href="day-trips.html">Day Trip Packages</a></li>
+                        <li><a href="budget-tours.html">Budget Tour Packages</a></li>
+                        <li><a href="midrange-tours.html">Midrange Tour Packages</a></li>
+                        <li><a href="luxury-tours.html">Luxury Tour Packages</a></li>
+                        <li><a href="hiking.html">Hiking Packages</a></li>
+                        <li><a href="zanzibar-holidays.html">Zanzibar Holidays Packages</a></li>
+                    </ul>
+                </li>
+                <li><a href="about us.html">About us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Mobile Navigation -->
+    <nav class="mobile-nav">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="destinations.html">Destinations</a></li>
+            <li class="tour-item">
+                <a href="tours.html" onclick="toggleDropdown(event)">Tours</a>
+                <ul class="dropdown">
+                    <li><a href="day-trips.html">Day Trip Packages</a></li>
+                    <li><a href="budget-tours.html">Budget Tour Packages</a></li>
+                    <li><a href="midrange-tours.html">Midrange Tour Packages</a></li>
+                    <li><a href="luxury-tours.html">Luxury Tour Packages</a></li>
+                    <li><a href="hiking.html">Hiking Packages</a></li>
+                    <li><a href="zanzibar-holidays.html">Zanzibar Holidays Packages</a></li>
+                </ul>
+            </li>
+            <li><a href="about us.html">About us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <script>
+        // Toggle Mobile Menu
+        function toggleMobileMenu() {
+            document.querySelector('.mobile-nav').classList.toggle('active');
+        }
+
+        // Toggle Dropdown for "Tours"
+        function toggleDropdown(event) {
+            event.preventDefault();
+            const parentLi = event.target.parentElement;
+            parentLi.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Discover who we are, our mission, and the team behind Mafoy Africa Safaris.">
+    <title>About Us - Mafoy Africa Safaris</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+/* General reset and styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            animation: fadeInBody 1s ease-out; /* Fade in body */
+            zoom: 0.67; /* Sets the zoom level to 75% */
+        }
+
+.about-container {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 40px;
+    background-color: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1.5s ease-in-out;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    border-top: 5px solid #2980b9; /* Decorative border */
+}
+
+.about-container h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    color: #071c2a;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.15);
+    animation: slideInFromTop 1s ease-out;
+}
+
+.about-container p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    line-height: 1.8;
+    color: #555;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.about-container p.highlight {
+    font-weight: bold;
+    color: #2980b9;
+    text-transform: uppercase;
+}
+
+/* Animating text slide-in from the top */
+@keyframes slideInFromTop {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Excellence Section Styling */
+.excellence-section {
+    background: linear-gradient(to right, #2980b9, #8e44ad);
+    padding: 50px 20px;
+    margin: 40px 0;
+    border-radius: 15px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    color: #fff;
+    text-align: center;
+    position: relative;
+    animation: fadeInUp 1.2s ease-out;
+}
+
+.excellence-section::before {
+    content: '';
+    background: url('excellence-background.jpg') no-repeat center center/cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0.2;
+    z-index: -1;
+    border-radius: 15px;
+}
+
+.excellence-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.5);
+}
+
+.excellence-point {
+    margin-bottom: 30px;
+    display: inline-block;
+    width: 200px;
+    text-align: center;
+}
+
+.excellence-point i {
+    font-size: 50px;
+    color: #fff;
+    background-color: #2980b9;
+    padding: 20px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease;
+}
+
+.excellence-point i:hover {
+    transform: scale(1.1);
+}
+
+.excellence-point h3 {
+    font-size: 1.4rem;
+    margin-top: 10px;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.excellence-point p {
+    font-size: 1.1rem;
+    color: #fff;
+    line-height: 1.6;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* CEO Section Styling */
+.ceo-section {
+    background-color: #f9f9f9;
+    padding: 40px 20px;
+    margin: 50px 0;
+    border-radius: 15px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    animation: fadeInUp 1.5s ease-out;
+}
+
+.ceo-section img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid #2980b9;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+}
+
+.ceo-section img:hover {
+    transform: scale(1.05);
+}
+
+.ceo-section h3 {
+    font-size: 2rem;
+    color: #071c2a;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.ceo-section p {
+    font-size: 1.2rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Offering Card Hover Effect */
+.offering-card:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.2);
+    background-color: #f1f1f1;
+}
+
+/* Grid Layout for Offerings */
+.offerings {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* Adjusted */
+    gap: 20px;
+    justify-items: center; /* Centers items horizontally */
+    align-items: center;   /* Centers items vertically */
+    justify-content: center; /* Centers the entire grid content */
+    animation: fadeInUp 2s ease-out;
+}
+
+/* Offering Card Styling */
+.offering-card {
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    border-bottom: 5px solid #2980b9; /* Bottom border for decoration */
+    display: flex;                  /* Ensures content is properly aligned */
+    flex-direction: column;         /* Stacks elements vertically */
+    align-items: center;            /* Centers content inside the card */
+    justify-content: space-between; /* Spreads out the content */
+}
+
+.offering-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 12px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.offering-card:hover img {
+    transform: scale(1.1);
+}
+
+.offering-card .content {
+    padding: 15px;
+}
+
+.offering-card .content h3 {
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+    color: #071c2a;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.offering-card .content p {
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+    .about-container {
+        padding: 20px;
+    }
+
+    .offerings {
+        grid-template-columns: 1fr;
+    }
+
+    .excellence-point {
+        width: 100%;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <div class="about-container">
+        <h1>About Us</h1>
+        <p>
+            Welcome to <span class="highlight">Mafoy Africa Safaris</span>, where we bring the best of Tanzania to the world! Since our founding in 2024, we have been dedicated to providing our clients with personalized and unforgettable safari experiences.
+        </p>
+        <p>
+            From wildlife adventures in Serengeti to cultural immersion in Maasai villages, we are committed to offering you the most diverse and exciting tours in Tanzania.
+        </p>
+
+        <!-- What We Offer Section -->
+        <div class="section-title" style="font-size: 2.5rem; margin: 40px 0; color: #2980b9; font-weight: bold; text-transform: uppercase;">
+            What We Offer
+        </div>
+        <div class="offerings">
+            <!-- Wildlife Safari -->
+            <div class="offering-card">
+                <img src="lion.jpg" alt="Wildlife Safari">
+                <div class="content">
+                    <h3>Wildlife Safaris</h3>
+                    <p>Explore Tanzania's world-famous parks, including Serengeti and Ngorongoro Crater, with expert guides.</p>
+                </div>
+            </div>
+
+            <!-- Mountain Climbing -->
+            <div class="offering-card">
+                <img src="kilimanjaro.jpg" alt="Mountain Climbing">
+                <div class="content">
+                    <h3>Mountain Climbing</h3>
+                    <p>Reach the summit of Mount Kilimanjaro and other incredible peaks with our experienced trekking guides.</p>
+                </div>
+            </div>
+
+            <!-- Cultural Tours -->
+            <div class="offering-card">
+                <img src="hadzabe.jpg" alt="Cultural Tours">
+                <div class="content">
+                    <h3>Cultural Tours</h3>
+                    <p>Experience the traditions and customs of Tanzania's indigenous tribes with authentic cultural experiences.</p>
+                </div>
+            </div>
+
+            <!-- Beach Holidays -->
+            <div class="offering-card">
+                <img src="beach3.jpg" alt="Beach Holidays">
+                <div class="content">
+                    <h3>Beach Holidays</h3>
+                    <p>Relax on the pristine beaches of Zanzibar, with crystal-clear waters and vibrant marine life.</p>
+                </div>
+            </div>
+        </div>
+<section>
+        <!-- Our Excellence Section -->
+        <div class="excellence-section">
+            <h2>Our Excellence</h2>
+            <div class="excellence-point">
+                <i class="material-icons">local_offer</i>
+                <h3>Affordable Packages</h3>
+                <p>We offer the best rates while maintaining the highest standards in quality service.</p>
+            </div>
+            <div class="excellence-point">
+                <i class="material-icons">thumb_up</i>
+                <h3>Expert Guides</h3>
+                <p>Our knowledgeable guides bring you closer to Tanzania’s wild side.</p>
+            </div>
+            <div class="excellence-point">
+                <i class="material-icons">business_center</i>
+                <h3>Tailored Experiences</h3>
+                <p>We offer custom safaris that are personalized to your unique preferences and interests.</p>
+            </div>
+        </div>
+
+        <!-- CEO Section -->
+        <div class="ceo-section">
+            <img src="mafoy2.jpg.png" alt="CEO of Mafoy Africa Safaris">
+            <h3>John Doe</h3>
+            <p>Founder and CEO, Mafoy Africa Safaris</p>
+        </div>
+
+        <p>
+            Our team is passionate about making your Tanzanian safari dream a reality. Join us for an experience that will last a lifetime!
+        </p>
+    </div></section>
+    
+    
+</body>
+
+</html>
+
+  
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .footer {
+            background-color: #2C3E50;
+            color: white;
+            padding: 50px 0;
+            text-align: center;
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+            gap: 40px;
+        }
+
+        .footer-section {
+            flex: 1;
+            min-width: 250px;
+            text-align: left;
+        }
+
+        .footer-section h3 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: #FF9900;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .footer-links a, .footer-links p {
+            color: #ECF0F1;
+            text-decoration: none;
+            margin-bottom: 10px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: #FF9900;
+            text-decoration: underline;
+        }
+
+        .footer-bottom {
+            margin-top: 30px;
+            padding: 20px 0;
+            background-color: #2C3E50;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .footer-bottom-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .footer-legal-links a {
+            color: #ECF0F1;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            margin: 0 10px;
+        }
+
+        .footer-legal-links a:hover {
+            color: #FF9900;
+        }
+
+        .separator {
+            margin: 0 10px;
+            color: rgba(255,255,255,0.3);
+        }
+
+        .footer-brand p {
+            color: #ECF0F1;
+            font-weight: 600;
+            margin: 0;
+            letter-spacing: 1px;
+        }
+
+        @media (max-width: 768px) {
+            .footer-container {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 0 20px;
+            }
+
+            .footer-section {
+                text-align: left;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>About Us</h3>
+                <div class="footer-links">
+                    <a href="#">Terms and Conditions</a>
+                    <a href="#">Privacy</a>
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <h3>Travel Information</h3>
+                <div class="footer-links">
+                    <a href="#">Tanzania Weather</a>
+                    <a href="#">Yellow Fever Requirement</a>
+                    <a href="#">When to Visit</a>
+                    <a href="#">Travel Resources</a>
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <h3>Travel Guide</h3>
+                <div class="footer-links">
+                    <a href="#">Frequently Asked Questions</a>
+                    <a href="#">Mountain Packing List</a>
+                    <a href="#">Packing List for Safaris</a>
+                    <a href="#">Safari Coding</a>
+                    <a href="#">Things to Do</a>
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <div class="footer-links">
+                    <p>Call and WhatsApp: <br>+255 692 208 654 <br></p>
+                    <p>Email: info@mafoyafricasafaris.com</p>
+                    <p>Address: Arusha, Tanzania</p>
+                    <a href="#">Facebook</a>
+                    <a href="#">Instagram</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="footer-bottom-content">
+             
+                <div class="footer-brand">
+                    <p>Mafoy Africa Safaris. All Rights Reserved.</p>
+                </div>
+                <div class="footer-legal-links">
+                    <a href="#">Privacy Policy</a>
+                    <span class="separator">|</span>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dream Vacation</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f8f8;
+            color: #333;
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 60px 10%;
+            max-width: 1400px;
+            margin: auto;
+            gap: 40px;
+        }
+
+        /* Text Section */
+        .text-section {
+            flex: 1;
+            max-width: 600px;
+        }
+
+        .text-section h1 {
+            font-size: 2.8em;
+            color: #2a2a2a;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .text-section p {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+            color: #555;
+        }
+
+        .text-section h2 {
+            font-size: 2em;
+            color: #2a2a2a;
+            margin-top: 40px;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        /* Image Section */
+        .image-section {
+            flex: 1;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .image-section img {
+            width: 100%;
+            max-width: 550px;
+            height: auto;
+            object-fit: cover;
+            clip-path: circle(50% at 50% 50%);
+            transition: transform 0.3s ease-in-out;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .image-section img:hover {
+            transform: scale(1.05);
+        }
+
+        /* Decorative Effect for Cut-out */
+        .image-section::before {
+            content: '';
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: linear-gradient(135deg, #ffcc33, #ff9966);
+            border-radius: 50%;
+            opacity: 0.3;
+            z-index: -1;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .container {
+                flex-direction: column;
+                padding: 40px;
+                text-align: center;
+            }
+
+            .text-section {
+                max-width: 100%;
+                margin-bottom: 30px;
+            }
+
+            .image-section img {
+                max-width: 400px;
+            }
+
+            .image-section::before {
+                width: 450px;
+                height: 450px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .text-section h1 {
+                font-size: 2.2em;
+            }
+
+            .text-section p {
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Text Section -->
+        <div class="text-section">
+            <h1>Book Your Dream Vacation Now!</h1>
+            <p>
+                A Tanzania vacation is the ultimate once-in-a-lifetime holiday! Tanzania is a top safari destination with breathtaking landscapes, vibrant wildlife, and an unforgettable cultural experience. Whether you dream of exploring the endless plains of the Serengeti, witnessing the Great Migration, or marveling at the Ngorongoro Crater, Tanzania offers something for everyone.
+            </p>
+            <p>
+                You can unwind on the pristine beaches of Zanzibar Island, known for its turquoise waters and white sands, or challenge yourself with an exhilarating climb up Mount Kilimanjaro, Africa's highest peak. The possibilities are endless, and every moment promises memories to last a lifetime.
+            </p>
+            <h2>The Best Way to Explore Tanzania</h2>
+            <p>
+                Thousands of travelers have embarked on this adventure with us, and each journey has been as unique as the individuals who experienced it. From families to solo travelers, our itineraries are designed to cater to every need and preference. Whether you prefer luxury lodges or budget-friendly camping, we have you covered.
+            </p>
+            <p>
+                Our dedicated team in Arusha comprises passionate locals and expats who know Tanzania like the back of their hand. From planning your safari to ensuring every detail is perfect, we are here to make your dream vacation a reality. Don't just take our word for it – check out our glowing reviews on TripAdvisor!
+            </p>
+            <p>
+                Let us take the hassle out of planning. Share your preferences, and we'll craft an itinerary that combines adventure, relaxation, and discovery. From the moment you arrive to the time you leave, you'll feel the magic of Tanzania.
+            </p>
+        </div>
+
+        <!-- Image Section -->
+        <div class="image-section">
+            <img src="https://via.placeholder.com/550" alt="Safari Vehicle">
+        </div>
+    </div>
+</body>
+</html>
