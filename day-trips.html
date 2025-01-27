@@ -346,6 +346,834 @@ header {
 
 <!DOCTYPE html>
 <html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Safari Packages | Tanzania Adventures</title>
+    <style>
+        /* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            animation: fadeInBody 1s ease-out; /* Fade in body */
+            zoom: 0.67; /* Sets the zoom level to 75% */
+        }
+        /* Main Content */
+        .main-content {
+            margin-top: 0px;
+            /* Reduced top margin */
+            padding: 1rem;
+            /* Reduced padding */
+            max-width: 100%;
+            margin-left: 0;
+            margin-right: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            opacity: 0;
+            animation: fadeIn 1s forwards;
+        }
+
+        /* Safari Packages Grid */
+        .packages-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            /* Exactly 4 columns on desktop */
+            gap: 1.5rem;
+            /* Reduced gap between items */
+            width: 100%;
+            margin-top: 1.5rem;
+            /* Reduced margin-top */
+            justify-items: stretch;
+        }
+
+        /* Package Card */
+        .package-card {
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            width: 100%;
+            opacity: 0;
+            animation: fadeInUp 0.8s forwards;
+        }
+
+        .package-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Package Image */
+        .package-image {
+            width: 100%;
+            height: 180px;
+            /* Adjusted height for better spacing */
+            object-fit: cover;
+            /* Ensure the image covers the container without stretching */
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        .package-card:hover .package-image {
+            transform: scale(1.05);
+            opacity: 0.8;
+        }
+
+        .package-content {
+            padding: 1rem;
+            /* Reduced padding */
+        }
+
+        .package-title {
+            font-size: 1.4rem;
+            /* Slightly smaller font size */
+            color: #2c3e50;
+            margin-bottom: 0.3rem;
+            /* Reduced bottom margin */
+            opacity: 0;
+            animation: fadeInUp 1s 0.2s forwards;
+        }
+
+        /* Responsive Font Size Adjustments */
+        @media (max-width: 1200px) {
+            .package-title {
+                font-size: 1.3rem;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .package-title {
+                font-size: 1.2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .package-title {
+                font-size: 1.1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .package-title {
+                font-size: 1rem;
+            }
+        }
+
+        .package-details {
+            margin-bottom: 0.5rem;
+            /* Reduced margin-bottom */
+            color: #666;
+            opacity: 0;
+            animation: fadeInUp 1s 0.4s forwards;
+        }
+
+        .package-price {
+            font-weight: bold;
+            color: #2c3e50;
+            font-size: 1.1rem;
+            /* Reduced font size */
+            margin-bottom: 0.8rem;
+            /* Reduced margin-bottom */
+            opacity: 0;
+            animation: fadeInUp 1s 0.6s forwards;
+        }
+
+        .view-details-btn {
+    display: inline-block;
+    padding: 0.8rem 1.5rem; /* Adjusted padding */
+    background-color: #d99d42; /* Golden orange */
+    color: #fff;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    font-weight: 500;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 1rem;
+    font-size: 1.1rem;
+}
+
+.view-details-btn:hover {
+    background-color: #b96329; /* Slightly darker golden orange for hover */
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 2000;
+        }
+
+        .modal.active {
+            display: block;
+            animation: fadeInModal 0.5s forwards;
+        }
+
+        .modal-content {
+            position: relative;
+            background-color: #fff;
+            width: 100%;
+            max-width: 1000px;
+            margin: 2rem auto;
+            border-radius: 12px;
+            max-height: 90vh;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            opacity: 0;
+            animation: fadeInUp 1s forwards;
+        }
+
+        .modal-header {
+            padding: 1rem;
+            /* Reduced padding */
+            background-color: #3498db;
+            border-bottom: 1px solid #dee2e6;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .modal-title {
+            font-size: 1.4rem;
+            /* Slightly smaller font size */
+            color: #fff;
+        }
+
+        .close-modal {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #fff;
+            padding: 0.5rem;
+        }
+
+        .close-modal:hover {
+            color: #f8f9fa;
+        }
+
+        .modal-body {
+            display: flex;
+            height: calc(100vh - 140px);
+            opacity: 0;
+            animation: fadeInUp 1s 0.3s forwards;
+        }
+
+        .modal-sidebar {
+            width: 250px;
+            background-color: #f8f9fa;
+            border-right: 1px solid #dee2e6;
+            padding: 1rem;
+            overflow-y: auto;
+        }
+
+        .modal-nav {
+            list-style: none;
+        }
+
+        .modal-nav-item {
+            margin-bottom: 0.5rem;
+        }
+
+        .modal-nav-link {
+            display: block;
+            padding: 0.8rem 1rem;
+            color: #666;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+        }
+
+        .modal-nav-link:hover,
+        .modal-nav-link.active {
+            background-color: #3498db;
+            color: #fff;
+        }
+
+        .modal-main {
+            flex: 1;
+            padding: 1rem;
+            /* Reduced padding */
+            overflow-y: auto;
+        }
+
+       .tab-content {
+    display: none; /* Initially hidden */
+    padding: 20px; /* Padding for spacing inside the container */
+    background-color: #ffffff; /* Clean white background for maximum contrast */
+    border: 1px solid #dcdcdc; /* Subtle border for structure */
+    border-radius: 8px; /* Smooth rounded corners */
+    font-size: 18px; /* Larger font size for readability */
+    line-height: 1.8; /* Comfortable line spacing */
+    color: #1a1a1a; /* Very dark gray text for excellent contrast */
+    text-align: justify; /* Ensure text fills the width evenly */
+    word-wrap: break-word; /* Prevent long words from breaking the layout */
+    width: 100%; /* Ensure the content spans the full width of the container */
+    box-sizing: border-box; /* Include padding and border in the element's width */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Display content when active */
+.tab-content.active {
+    display: block; /* Show content */
+    animation: fadeIn 0.3s ease-in-out; /* Smooth fade-in effect */
+}
+
+/* Styling for itinerary headings */
+.itinerary-day h4 {
+    font-size: 1.4rem; /* Professional and legible font size */
+    color: #004080; /* Deep blue color for a clean and modern look */
+    margin-bottom: 0.5rem; /* Space below heading for separation */
+    font-weight: 600; /* Slightly bold for emphasis */
+    text-transform: uppercase; /* Uppercase for a structured appearance */
+}
+
+/* Fade-in animation for smooth transitions */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Adjustments for larger desktop screens */
+@media (min-width: 1024px) {
+    .tab-content {
+        font-size: 20px; /* Slightly larger text for desktop */
+        padding: 25px; /* More padding for a spacious look */
+        line-height: 2; /* Increase line spacing for better readability */
+    }
+    .itinerary-day h4 {
+        font-size: 1.6rem; /* Slightly larger heading size for desktop */
+    }
+}
+
+/* Adjustments for mobile devices */
+@media (max-width: 768px) {
+    .tab-content {
+        font-size: 16px; /* Slightly smaller font for mobile */
+        padding: 15px; /* Compact padding for smaller screens */
+    }
+    .itinerary-day h4 {
+        font-size: 1.2rem; /* Adjust heading size for smaller screens */
+    }
+}
+
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .tab-content img {
+            width: 100% !important;
+            height: 50px !important;
+            object-fit: cover !important;
+            border-radius: 0px;
+            margin-bottom: 0rem;
+            animation: fadeInImage 1s ease-in-out;
+            height: fit-content;
+        }
+
+        .back-to-packages {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background-color: #1471cd;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 6px;
+            margin-top: 1.5rem;
+            transition: background-color 0.3s ease;
+            height: fit-content;
+        }
+
+        .back-to-packages:hover {
+            background-color: #34495e;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInModal {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInImage {
+            from {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            .packages-grid {
+                grid-template-columns: repeat(3, 1fr);
+                /* 3 columns for medium screens */
+            }
+        }
+
+        @media (max-width: 992px) {
+            .packages-grid {
+                grid-template-columns: repeat(2, 1fr);
+                /* 2 columns for tablet */
+            }
+        }
+
+        @media (max-width: 768px) {
+            .main-content {
+                padding: 1rem;
+            }
+
+            .packages-grid {
+                grid-template-columns: 1fr;
+                /* Single column for mobile */
+            }
+
+            .package-card {
+                margin-bottom: 1rem;
+            }
+
+            .package-image {
+                height: 150px;
+                /* Resize image for mobile */
+            }
+
+            .modal-body {
+                flex-direction: column;
+            }
+
+            .modal-sidebar {
+                width: 100%;
+                max-height: fit-content;
+                border-right: none;
+                border-bottom: 1px solid #dee2e6;
+            }
+
+            .modal-nav {
+                display: flex;
+                overflow-x: auto;
+                padding-bottom: 0.5rem;
+                gap: 0rem;
+                min-height: fit-content;
+            }
+
+            .modal-nav-item {
+                flex: 0 0 auto;
+                margin-bottom: 0;
+            }
+
+            .modal-nav-link {
+                white-space: nowrap;
+                padding: 0.5rem 1rem;
+            }
+
+            .modal-main {
+                height: calc(90vh - 250px);
+            }
+
+            .nav-menu {
+                display: none;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .package-card {
+                margin-bottom: 1rem;
+            }
+
+            .modal-content {
+                width: 100%;
+                margin: 0rem auto;
+            }
+
+            .modal-header {
+                padding: 0rem;
+            }
+
+            .modal-title {
+                font-size: 0.2rem;
+            }
+
+            h1 {
+                font-size: 0.0rem;
+            }
+        }
+        h1 {
+    font-size: 2rem; /* Adjust for mobile */
+}
+
+
+        /* Modal Full-Screen View */
+        .modal {
+            
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            /* Slightly darker overlay for emphasis */
+            overflow: auto;
+            padding: 2rem;
+            box-sizing: border-box;
+        }
+
+        .modal-content {
+            margin: auto;
+            background-color: #fff;
+            border-radius: 10px;
+            width: 160%;
+            width: max-content;
+           width: auto;
+            /* Larger maximum width */
+            height: 50%;
+            /* Take up more screen height */
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+            /* Deeper shadow for more prominence */
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.0rem rem;
+            background-color: hwb(210 16% 0%);
+            /* Darker blue for contrast */
+            color: #fff;
+            font-size: 4rem;
+            /* Larger font size */
+            font-weight: bold;
+    
+        }
+
+        General Style for .modal */
+.modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 10vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8); /* Dark overlay */
+    overflow: hidden; /* Prevent scrolling */
+    overflow: visible;
+}
+
+/* General Style for .modal-content */
+.modal-content {
+    background-color: #fff;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 1600px; /* Larger maximum width for desktops */
+    height: auto; /* Default height */
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box; /* Ensures padding/border are included in dimensions */
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7); /* Shadow for prominence */
+}
+
+/* Mobile View (Small Screens) */
+@media (max-width: 768px) {
+    .modal {
+        padding: 0; /* Remove any internal padding */
+    }
+
+    .modal-content {
+        width: 100vw;      /* Full viewport width */
+        height: 100vh;     /* Full viewport height */
+        border-radius: 0;  /* Remove rounded corners */
+        margin: 0;         /* Remove margins */
+        padding: 0;        /* Remove padding */
+        box-shadow: none;  /* Remove shadow for fullscreen */
+    }
+}
+
+/* Disable body scrolling when modal is open */
+body.modal-open {
+    overflow: hidden;
+}
+
+.modal-sidebar {
+    flex: 0 0 25%; /* Reduced width for a sleek, modern look */
+    background: linear-gradient(135deg, #ffffff, #f8f9fa); /* Minimalist soft gradient */
+    padding: 1rem; /* Balanced padding */
+    overflow-y: auto;
+    border-right: 1px solid #e5e5e5; /* Subtle border for separation */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); /* Soft shadow for a floating effect */
+    border-radius: 12px; /* Rounded corners for a modern aesthetic */
+    color: #2b2b2b; /* Neutral dark text color */
+    font-family: 'Inter', sans-serif; /* Clean and modern font */
+    font-size: 0.95rem; /* Comfortable font size */
+    transition: all 0.3s ease-in-out; /* Smooth transition for hover effects */
+}
+
+/* Sidebar Navigation Styles */
+.modal-nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.modal-nav-item {
+    margin-bottom: 0.8rem; /* Clean spacing between items */
+}
+.modal-nav-link {
+    display: block;
+    padding: 0.8rem 1rem; /* Balanced padding for a clean look */
+    text-decoration: none;
+    color: #ffffff; /* White text for contrast */
+    background-color: hsl(42, 100%, 50%); /* Golden yellow background */
+    border: 1px solid hsl(42, 100%, 40%); /* Slightly darker golden yellow border */
+    border-radius: 8px; /* Modern rounded corners */
+    font-weight: 500; /* Medium font weight for clarity */
+    box-shadow: 0 2px 4px rgba(255, 195, 77, 0.2); /* Subtle golden yellow shadow */
+    transition: all 0.3s ease; /* Smooth transitions for hover effects */
+    font-size: 0.9rem; /* Sleek, slightly smaller text */
+}
+
+.modal-nav-link:hover {
+    background: linear-gradient(135deg, hsl(42, 100%, 40%), hsl(42, 100%, 50%)); /* Gradient golden yellow hover effect */
+    color: #FFFFFF; /* Keep text white on hover */
+    border-color: hsl(42, 100%, 30%); /* Slightly deeper golden yellow border for hover */
+    box-shadow: 0 4px 8px rgba(255, 180, 0, 0.3); /* Enhanced shadow on hover */
+    transform: translateY(-3px); /* Lift effect */
+}
+
+.modal-nav-link.active {
+    background: linear-gradient(135deg, hsl(42, 100%, 30%), hsl(42, 100%, 40%)); /* Deep gradient for active link */
+    color: #FFFFFF; /* White text for active state */
+    font-weight: 600; /* Slightly bolder for emphasis */
+    box-shadow: 0 6px 12px rgba(255, 160, 0, 0.4); /* Prominent golden yellow shadow for active state */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .modal-sidebar {
+        flex: 0 0 100%; /* Full width for mobile */
+        padding: 0.8rem; /* Adjusted padding for smaller screens */
+        background: linear-gradient(135deg, #f9f9f9, #ffffff); /* Subtle gradient for mobile */
+        box-shadow: none; /* Flat design for mobile */
+        border-radius: 0; /* No rounding for seamless stacking */
+    }
+
+    .modal-nav-item {
+        margin-bottom: 1.5rem; /* Compact spacing for mobile */
+    }
+
+    .modal-nav-link {
+        padding: 0.6rem 0.8rem; /* Compact padding */
+        font-size: 0.85rem; /* Slightly smaller text */
+    }
+
+    .modal-nav-link:hover {
+        transform: translateY(-2px); /* Subtle lift effect for mobile */
+    }
+}
+
+        .modal-main {
+            flex: 1;
+            padding: 0.5rem;
+            overflow-y: auto;
+            font-size: 1.2rem;
+            /* Slightly larger text for better readability */
+        }
+
+        .modal-nav {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .modal-nav-item {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Base styles (applies to all screen sizes) */
+.modal-nav-link {
+    display: block;
+    padding: 1rem 1.5rem;
+    text-decoration: none;
+    color: #333;
+    background-color: #e9ecef;
+    border-radius: 10px;
+    font-size: 1rem; /* Larger font size */
+    transition: background-color 0.3s;
+}
+
+/* Mobile-specific styles (screen width up to 768px) */
+@media (max-width: 768px) {
+    .modal-nav-link {
+        font-size: 0.9rem; /* Slightly smaller font size */
+        padding: 0.8rem 1.2rem; /* Adjusted padding for smaller screens */
+    }
+}
+
+/* Desktop-specific styles (screen width 769px and above) */
+@media (min-width: 769px) {
+    .modal-nav-link {
+        font-size: 1.2rem; /* Larger font size for desktop */
+        padding: 1.2rem 2rem; /* More spacious padding */
+    }
+}
+
+        .modal-nav-link.active {
+            background-color: #a19725;
+            color: #fff;
+        }
+
+        .modal-nav-link:hover {
+            background-color: #89b2dc;
+            color: #fff;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+/* General Style for .tab-image */
+.tab-image {
+    border-radius: 5px;
+    margin-bottom: 4rem;
+    object-fit: cover;
+    object-position: 0cqmax;
+}
+
+/* Desktop View (Large Screens) */
+@media (min-width: 992px) {
+    .tab-image {
+        max-height: 900px; /* Larger image for desktops */
+    }
+}
+
+/* Mobile View (Small Screens) */
+@media (max-width: 768px) {
+    .tab-image {
+        max-height: 200px; /* Smaller image for mobile */
+    }
+}
+
+        .close-modal {
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 2rem;
+            /* Larger close button */
+            cursor: pointer;
+        }
+
+        .itinerary-day {
+            margin-bottom: rem;
+        }
+
+        .itinerary-day h4 {
+            font-size: 1.4rem;
+            /* Larger day title */
+            color: #004080;
+            margin-bottom: 0.5rem;
+        }
+
+        .itinerary-day p {
+            font-size: 1.3rem;
+            /* Larger description text */
+        }
+
+        .itinerary-image {
+            max-width: 100%;
+            height: auto;
+            margin-top: 0rem;
+            border-radius: 10px;
+        }
+
+ 
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .back-to-packages {
+        font-size: 1.2rem; /* Smaller font size on mobile */
+        padding: 0.8rem 1.5rem; /* Adjust padding for mobile */
+        margin-top: 1.5rem; /* Adjust top margin on mobile */
+        margin-bottom: 1.5rem; /* Adjust bottom margin on mobile */
+    }
+}
+h1 {
+  font-size: 2rem; /* Default size */
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 1.5rem; /* Smaller size for mobile */
+  }
+}
+</style>  
+
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -362,7 +1190,6 @@ header {
             line-height: 1.6;
             color: #333;
             background-color: #f4f4f9;
-            zoom: 0.67; /* Sets the zoom level to 75% */
         }
 
         .main-content {
@@ -538,6 +1365,7 @@ header {
 }
 
 }
+
     </style>
   </head>
   <body>
