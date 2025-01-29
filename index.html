@@ -5320,35 +5320,59 @@ font-weight: 600;
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
-        .unique-footer-modal {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
-    z-index: 1000;
-    transform: scale(0.67); /* Apply zoom */
-    transform-origin: center; /* Ensures the zoom happens from the center */
+/* Modal container */
+.unique-footer-modal {
+   display: none; /* Hidden by default */
+   position: fixed;
+   top: 120px; /* Start from absolute top */
+   left: 0;
+   width: 100%; /* Full screen width */
+   height: 130vh; /* Full screen height */
+   background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+   z-index: 1000; /* Ensure it is above the content */
+   transform: scale(1); /* Remove the scale to make it visible in full size */
+   transform-origin: center; /* Keep the modal centered */
+   overflow-y: auto; /* Allow scrolling on the entire modal */
+}
+
+/* Modal content */
+.unique-footer-modal-content {
+   position: relative;
+   background: linear-gradient(135deg, #e0eafc, #cfdef3); /* Gradient background */
+   margin: 0 auto; /* Center the content */
+   padding: 40px; /* Adjust padding */
+   max-width: 1200px; /* Max width of the content */
+   width: 95%; /* Width of the modal content */
+   min-height: 80vh; /* Minimum height to ensure visibility */
+   border-radius: 12px; /* Rounded corners */
+   color: #333; /* Text color */
+   overflow-y: auto; /* Allow scrolling if content is too large */
+   border: 3px solid #f39c12; /* Border for visual effect */
+   transition: all 0.3s ease-in-out; /* Smooth transition */
+   z-index: 1050; /* Ensure content is above the background */
+}
+
+/* Add a slight animation when modal opens */
+@keyframes modal-appear {
+   0% {
+      opacity: 0;
+      transform: scale(0.85);
+   }
+   100% {
+      opacity: 1;
+      transform: scale(1);
+   }
+}
+
+.unique-footer-modal-content {
+   animation: modal-appear 0.3s ease-out; /* Add fade-in animation */
 }
 
 
-        .unique-footer-modal-content {
-    position: relative;
-    background: linear-gradient(135deg, #e0eafc, #cfdef3); /* Soft gradient background for elegance */
-    margin: 100px auto; /* Centering the modal */
-    padding: 60px; /* Increased padding */
-    max-width: 1000px; /* Larger width */
-    width: 80%; /* Adjusted width */
-    height: 80%; /* Increased height */
-    border-radius: 12px; /* Rounded corners */
-    color: #333;
-    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.3); /* Stronger shadow for more emphasis */
-    overflow-y: auto; /* Scrolling if content overflows */
-    border: 3px solid #f39c12; /* Golden border for contrast */
-    transition: all 0.3s ease-in-out; /* Smooth transition for hover effects */
+.unique-footer-modal-content {
+   animation: modal-appear 0.3s ease-out; /* Add fade-in animation */
 }
+
 
 .unique-footer-modal-content:hover {
     transform: scale(1.05); /* Slight scale effect when hovering over the modal */
@@ -5507,18 +5531,18 @@ font-weight: 600;
                 </div>
             </div>
 
-            <div class="footer-section">
-                <h3>Contact Us</h3>
+            <div class="footer-section" style="transform: scale(0.6); transform-origin: top left;">
+                <h1>Contact Us</h1>
                 <div class="footer-links">
                     <p>Call and WhatsApp: <br>+255 692 208 654 <br></p>
                     <p>Email: info@mafoyafricasafaris.com</p>
                     <p>Email: mafoyafricasafaris@gmail.com </p>
                     <p>Address: Arusha, Tanzania</p>
                     <a href="https://www.facebook.com/share/14iTeG9r7P/">Facebook</a>
-                    <a href="#">Instagram</a>
+                    <a href="https://www.instagram.com/mafoy_africa_safaris/?hl=en">Instagram</a>
                 </div>
             </div>
-        </div>
+            
 
         <div class="footer-bottom">
             <div class="footer-bottom-content">
@@ -5819,6 +5843,7 @@ font-weight: 600;
                 flex: 1;
                 min-width: 250px;
                 text-align: left;
+
             }
     
             .footer-section h3 {
@@ -5827,6 +5852,8 @@ font-weight: 600;
                 color: #FF9900;
                 text-transform: uppercase;
                 letter-spacing: 1px;
+            zoom: 0.67; /* Sets the zoom level to 75% */
+
             }
     
             .footer-links {
