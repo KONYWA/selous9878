@@ -5324,7 +5324,7 @@ font-weight: 600;
 .unique-footer-modal {
    display: none; /* Hidden by default */
    position: fixed;
-   top: 120px; /* Start from absolute top */
+   top: 100px; /* Start from absolute top */
    left: 0;
    width: 100%; /* Full screen width */
    height: 130vh; /* Full screen height */
@@ -5494,6 +5494,7 @@ font-weight: 600;
     .unique-footer-close-btn {
         font-size: 35px; /* Larger close button on mobile */
     }
+    
 }
 
     </style>
@@ -5531,8 +5532,8 @@ font-weight: 600;
                 </div>
             </div>
 
-            <div class="footer-section" style="transform: scale(0.6); transform-origin: top left;">
-                <h1>Contact Us</h1>
+            <div class="footer-section" style="transform: scale(0.6); transform-origin: top left; margin-left: 0; text-align: left; width: 100%;">
+                <h1 style="margin-left: 0; text-align: left;">Contact Us</h1>
                 <div class="footer-links">
                     <p>Call and WhatsApp: <br>+255 692 208 654 <br></p>
                     <p>Email: info@mafoyafricasafaris.com</p>
@@ -5542,6 +5543,7 @@ font-weight: 600;
                     <a href="https://www.instagram.com/mafoy_africa_safaris/?hl=en">Instagram</a>
                 </div>
             </div>
+            
             
 
         <div class="footer-bottom">
@@ -5829,15 +5831,16 @@ font-weight: 600;
                 padding: 50px 0;
                 text-align: center;
             }
-    
             .footer-container {
-                display: flex;
-                justify-content: center;
-                flex-wrap: wrap;
-                max-width: 1200px;
-                margin: 0 auto;
-                gap: 40px;
-            }
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 20px; /* Reduce gap to decrease height */
+    padding: 10px 0; /* Adjust padding to decrease height */
+}
+
     
             .footer-section {
                 flex: 1;
@@ -5887,7 +5890,7 @@ font-weight: 600;
                 align-items: center;
                 max-width: 1200px;
                 margin: 0 auto;
-                padding: 0 20px;
+                padding: 0 1px;
             }
     
             .footer-legal-links a {
