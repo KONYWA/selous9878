@@ -2158,7 +2158,8 @@ zoom: 0.67; /* Sets the zoom level to 75% */
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Package Details</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>/* Base Modal Styles */
+    <style>
+        /* Base Modal Styles */
         .modal {
             display: none;
             position: fixed;
@@ -2169,7 +2170,7 @@ zoom: 0.67; /* Sets the zoom level to 75% */
             background-color: rgba(197, 184, 141, 0.838);
             z-index: 1000;
         }
-        
+
         .modal-content {
             position: relative;
             background-color: #fff;
@@ -2181,7 +2182,7 @@ zoom: 0.67; /* Sets the zoom level to 75% */
             overflow-y: auto;
             border-radius: 12px;
         }
-        
+
         /* Header Styles */
         .modal-header {
             display: flex;
@@ -2192,14 +2193,14 @@ zoom: 0.67; /* Sets the zoom level to 75% */
             background-color: #FFA500; /* Orange header */
             border-radius: 8px;
         }
-        
+
         .modal-title {
             margin: 0;
             font-size: 36px;
             font-weight: bold;
             color: #ffffff;
         }
-        
+
         /* Home Link Button */
         .home-link {
             font-size: 16px;
@@ -2216,30 +2217,30 @@ zoom: 0.67; /* Sets the zoom level to 75% */
             text-align: center;
             cursor: pointer;
         }
-        
+
         .home-link:hover {
             background-color: #b8860b;
             color: #ffffff;
             transform: translateY(-2px);
-            box-shadow: 0 6px 10px #002b36(0, 0, 0, 0.2);
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
             text-decoration: underline;
         }
-        
+
         /* Modal Body */
         .modal-body {
             display: flex;
             gap: 40px;
             overflow: auto;
         }
-        
+
         .modal-sidebar {
             flex: 0 0 300px;
         }
-        
+
         .modal-main {
             flex: 1;
         }
-        
+
         /* Navigation Items */
         .modal-nav-item {
             margin-bottom: 20px;
@@ -2247,45 +2248,17 @@ zoom: 0.67; /* Sets the zoom level to 75% */
             border-radius: 6px;
             transition: all 0.3s ease;
         }
-        
+
         .modal-nav-link {
             display: block;
             padding: 15px 25px;
             font-size: 18px;
-            color:#002b36;
+            color: #002b36;
             text-decoration: none;
             transition: all 0.3s ease;
-            background-color:  #f4f0e8; 
-            
+            background-color: #f4f0e8;
         }
-        /* Active State */
-.modal-nav-item.active {
-background-color: #f4eede; /* Golden orange for active item */
-padding: 15px 25px;
-border-radius: 6px;
-}
 
-.modal-nav-link.active {
-background-color: #e1dcce; /* Golden orange for active link */
-color: #ffffff; /* White text */
-font-weight: 600;
-border-radius: 6px;
-}
-.modal-nav-link.active {
-background-color: #DAA520; /* Golden orange for active link */
-color: #ffffff; /* White text */
-font-weight: 600;
-border-radius: 6px;
-}
-        
-        /* Hover Effect */
-        .modal-nav-link:hover {
-            background-color: #e4dfd2; /* Golden orange on hover */
-            color: #ffffff;
-            border-radius: 6px;
-            font-weight: 600;
-        }
-        
         /* Active State */
         .modal-nav-item.active,
         .modal-nav-link.active {
@@ -2294,13 +2267,21 @@ border-radius: 6px;
             font-weight: 600;
             border-radius: 6px;
         }
-        
+
+        /* Hover Effect */
+        .modal-nav-link:hover {
+            background-color: #e4dfd2; /* Golden orange on hover */
+            color: #ffffff;
+            border-radius: 6px;
+            font-weight: 600;
+        }
+
         /* List Styles */
         .list-container {
             display: grid;
             gap: 1rem;
         }
-        
+
         .list-item {
             background: #f8fafc;
             padding: 1.25rem;
@@ -2311,138 +2292,76 @@ border-radius: 6px;
             gap: 1rem;
             transition: all 0.2s;
         }
-        
+
         .list-item:hover {
             transform: translateY(-2px);
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
         }
-        
+
         .list-icon {
             font-size: 1.25rem;
         }
-        
+
         .inclusion-icon {
             color: #22c55e;
         }
-        
+
         .exclusion-icon {
             color: #ef4444;
         }
+
         /* Dining Section Styles */
-.dining-icon {
-color: #7c2d12;
-width: 24px;
-height: 24px;
-display: flex;
-align-items: center;
-justify-content: center;
-font-size: 1.2rem;
-margin-right: 10px;
-border-radius: 50%;
-background: #fff7ed;
-padding: 15px;
-transition: all 0.3s ease;
-}
+        .dining-icon {
+            color: #7c2d12;
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            margin-right: 10px;
+            border-radius: 50%;
+            background: #fff7ed;
+            padding: 15px;
+            transition: all 0.3s ease;
+        }
 
-#dining-text .list-container {
-display: grid;
-gap: 1.5rem;
-padding: 1rem 0;
-}
+        #dining-text .list-container {
+            display: grid;
+            gap: 1.5rem;
+            padding: 1rem 0;
+        }
 
-#dining-text .list-item {
-background: #ffffff;
-padding: 1.5rem;
-border-radius: 0.75rem;
-border: 1px solid #e2e8f0;
-display: flex;
-align-items: center;
-gap: 1.25rem;
-transition: all 0.3s ease;
-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-}
+        #dining-text .list-item {
+            background: #ffffff;
+            padding: 1.5rem;
+            border-radius: 0.75rem;
+            border: 1px solid #e2e8f0;
+            display: flex;
+            align-items: center;
+            gap: 1.25rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
 
-#dining-text .list-item:hover {
-transform: translateY(-3px);
-box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-border-color: #c2410c;
-}
+        #dining-text .list-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            border-color: #c2410c;
+        }
 
-#dining-text .list-item strong {
-color: #7c2d12;
-font-size: 1.1rem;
-display: block;
-margin-bottom: 0.25rem;
-}
+        #dining-text .list-item strong {
+            color: #7c2d12;
+            font-size: 1.1rem;
+            display: block;
+            margin-bottom: 0.25rem;
+        }
 
-#dining-text .list-item span:last-child {
-flex: 1;
-line-height: 1.5;
-color: #4a5568;
-}
-
-/* Icon-specific colors */
-#dining-text .fa-utensils {
-color: #c2410c;  /* Restaurant */
-}
-
-#dining-text .fa-wine-glass {
-color: #9a3412;  /* Fine dining */
-}
-
-#dining-text .fa-mug-hot {
-color: #854d0e;  /* Cafe */
-}
-
-#dining-text .fa-ice-cream {
-color: #b45309;  /* Dessert */
-}
-
-/* Responsive styles for dining section */
-@media screen and (max-width: 768px) {
-#dining-text .list-item {
-    padding: 1rem;
-    flex-direction: column;
-    text-align: center;
-    gap: 0.75rem;
-}
-
-.dining-icon {
-    margin: 0 auto;
-}
-
-#dining-text .list-item strong {
-    font-size: 1rem;
-}
-
-#dining-text .list-item span:last-child {
-    font-size: 0.9rem;
-}
-}
-
-/* Active state for dining tab */
-.modal-nav-link[href="#dining"].active {
-background-color: #c2410c;
-color: #ffffff;
-}
-
-/* Hover state for dining items */
-#dining-text .list-item:hover .dining-icon {
-transform: scale(1.1);
-transition: transform 0.3s ease;
-}
-
-/* Additional spacing for dining section */
-#dining.tab-content {
-padding: 1rem 0;
-}
-
-#dining h3 {
-margin-bottom: 1.5rem;
-color: #7c2d12;
-font-size: 1.5rem;
-font-weight: 600;
-}
+        #dining-text .list-item span:last-child {
+            flex: 1;
+            line-height: 1.5;
+            color: #4a5568;
+        }
 
         /* Itinerary Styles */
         .itinerary-day {
@@ -2457,7 +2376,7 @@ font-weight: 600;
             flex-direction: column;
             justify-content: flex-start;
         }
-        
+
         .itinerary-day h4 {
             color: #1e40af;
             margin-bottom: 0.5rem;
@@ -2466,28 +2385,38 @@ font-weight: 600;
             line-height: 1.4;
             text-align: left;
         }
-        
+        #overview p,
+#itinerary p,
+#rates p,
+#inclusion p,
+#exclusion p,
+#end-of-tours p,
+#accommodation p,
+#contact p {
+    font-size: 0.999em;
+}
+
         /* Itinerary Day Content */
         .itinerary-day .day-content {
-            font-size: 0.95rem;
+            font-size: 0.95rem; /* Adjusted font size for overview text */
             color: #333;
             line-height: 1.6;
             margin-bottom: 0.75rem;
             text-align: left;
         }
-        
+
         /* Tab Image Styles */
         .tab-image {
             height: 200px;
             margin-bottom: 5px;
         }
-        
+
         /* Tab Content */
         .tab-content {
             margin-top: 0;
             padding-top: 0px;
         }
-        
+
         /* Mobile-Specific Styles */
         @media screen and (max-width: 768px) {
             .itinerary-day {
@@ -2495,20 +2424,20 @@ font-weight: 600;
                 margin-bottom: 0.5rem;
                 width: 100%;
             }
-        
+
             .itinerary-day h4 {
                 font-size: 1rem;
                 margin-bottom: 0.25rem;
                 font-weight: 600;
                 text-align: left;
             }
-        
+
             .itinerary-day .day-content {
-                font-size: 0.875rem;
+                font-size: 0.9rem; /* Adjusted font size for mobile */
                 line-height: 1.5;
                 margin-bottom: 0.5rem;
             }
-        
+
             .modal-content {
                 margin: 0;
                 padding: 10px;
@@ -2518,29 +2447,29 @@ font-weight: 600;
                 scrollbar-width: thin;
                 -ms-overflow-style: scrollbar;
             }
-        
+
             .modal-header {
                 padding: 5px 10px;
                 margin-bottom: 10px;
                 background-color: #FFA500;
             }
-        
+
             .modal-title {
                 font-size: 20px;
                 margin: 0;
             }
-        
+
             .home-link {
                 font-size: 14px;
                 padding: 8px 16px;
             }
-        
+
             .modal-body {
                 flex-direction: column;
                 gap: 15px;
                 overflow: auto;
             }
-        
+
             .modal-sidebar {
                 flex: none;
                 width: 100%;
@@ -2548,7 +2477,7 @@ font-weight: 600;
                 margin-bottom: 10px;
                 overflow-x: auto;
             }
-        
+
             .modal-nav {
                 display: flex;
                 overflow-x: auto;
@@ -2559,14 +2488,18 @@ font-weight: 600;
                 position: relative;
                 overflow-y: auto;
             }
-        
+
             .modal-nav-link {
                 padding: 0.75rem 1rem;
                 font-size: 0.875rem;
                 white-space: nowrap;
             }
         }
-        
+
+        /* Make body height longer */
+        body {
+            min-height: 150vh; /* Increased body height */
+        }
     </style>
        </head>
        <body>
@@ -4505,6 +4438,7 @@ h1 {
     </main>
 </body>
 </html>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -4512,7 +4446,8 @@ h1 {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Package Details</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>/* Base Modal Styles */
+    <style>
+        /* Base Modal Styles */
         .modal {
             display: none;
             position: fixed;
@@ -4523,7 +4458,7 @@ h1 {
             background-color: rgba(197, 184, 141, 0.838);
             z-index: 1000;
         }
-        
+
         .modal-content {
             position: relative;
             background-color: #fff;
@@ -4535,7 +4470,7 @@ h1 {
             overflow-y: auto;
             border-radius: 12px;
         }
-        
+
         /* Header Styles */
         .modal-header {
             display: flex;
@@ -4546,14 +4481,14 @@ h1 {
             background-color: #FFA500; /* Orange header */
             border-radius: 8px;
         }
-        
+
         .modal-title {
             margin: 0;
             font-size: 36px;
             font-weight: bold;
             color: #ffffff;
         }
-        
+
         /* Home Link Button */
         .home-link {
             font-size: 16px;
@@ -4570,30 +4505,30 @@ h1 {
             text-align: center;
             cursor: pointer;
         }
-        
+
         .home-link:hover {
             background-color: #b8860b;
             color: #ffffff;
             transform: translateY(-2px);
-            box-shadow: 0 6px 10px #002b36(0, 0, 0, 0.2);
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
             text-decoration: underline;
         }
-        
+
         /* Modal Body */
         .modal-body {
             display: flex;
             gap: 40px;
             overflow: auto;
         }
-        
+
         .modal-sidebar {
             flex: 0 0 300px;
         }
-        
+
         .modal-main {
             flex: 1;
         }
-        
+
         /* Navigation Items */
         .modal-nav-item {
             margin-bottom: 20px;
@@ -4601,45 +4536,17 @@ h1 {
             border-radius: 6px;
             transition: all 0.3s ease;
         }
-        
+
         .modal-nav-link {
             display: block;
             padding: 15px 25px;
             font-size: 18px;
-            color:#002b36;
+            color: #002b36;
             text-decoration: none;
             transition: all 0.3s ease;
-            background-color:  #f4f0e8; 
-            
+            background-color: #f4f0e8;
         }
-        /* Active State */
-.modal-nav-item.active {
-background-color: #f4eede; /* Golden orange for active item */
-padding: 15px 25px;
-border-radius: 6px;
-}
 
-.modal-nav-link.active {
-background-color: #e1dcce; /* Golden orange for active link */
-color: #ffffff; /* White text */
-font-weight: 600;
-border-radius: 6px;
-}
-.modal-nav-link.active {
-background-color: #DAA520; /* Golden orange for active link */
-color: #ffffff; /* White text */
-font-weight: 600;
-border-radius: 6px;
-}
-        
-        /* Hover Effect */
-        .modal-nav-link:hover {
-            background-color: #e4dfd2; /* Golden orange on hover */
-            color: #ffffff;
-            border-radius: 6px;
-            font-weight: 600;
-        }
-        
         /* Active State */
         .modal-nav-item.active,
         .modal-nav-link.active {
@@ -4648,13 +4555,21 @@ border-radius: 6px;
             font-weight: 600;
             border-radius: 6px;
         }
-        
+
+        /* Hover Effect */
+        .modal-nav-link:hover {
+            background-color: #e4dfd2; /* Golden orange on hover */
+            color: #ffffff;
+            border-radius: 6px;
+            font-weight: 600;
+        }
+
         /* List Styles */
         .list-container {
             display: grid;
             gap: 1rem;
         }
-        
+
         .list-item {
             background: #f8fafc;
             padding: 1.25rem;
@@ -4665,138 +4580,76 @@ border-radius: 6px;
             gap: 1rem;
             transition: all 0.2s;
         }
-        
+
         .list-item:hover {
             transform: translateY(-2px);
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
         }
-        
+
         .list-icon {
             font-size: 1.25rem;
         }
-        
+
         .inclusion-icon {
             color: #22c55e;
         }
-        
+
         .exclusion-icon {
             color: #ef4444;
         }
+
         /* Dining Section Styles */
-.dining-icon {
-color: #7c2d12;
-width: 24px;
-height: 24px;
-display: flex;
-align-items: center;
-justify-content: center;
-font-size: 1.2rem;
-margin-right: 10px;
-border-radius: 50%;
-background: #fff7ed;
-padding: 15px;
-transition: all 0.3s ease;
-}
+        .dining-icon {
+            color: #7c2d12;
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            margin-right: 10px;
+            border-radius: 50%;
+            background: #fff7ed;
+            padding: 15px;
+            transition: all 0.3s ease;
+        }
 
-#dining-text .list-container {
-display: grid;
-gap: 1.5rem;
-padding: 1rem 0;
-}
+        #dining-text .list-container {
+            display: grid;
+            gap: 1.5rem;
+            padding: 1rem 0;
+        }
 
-#dining-text .list-item {
-background: #ffffff;
-padding: 1.5rem;
-border-radius: 0.75rem;
-border: 1px solid #e2e8f0;
-display: flex;
-align-items: center;
-gap: 1.25rem;
-transition: all 0.3s ease;
-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-}
+        #dining-text .list-item {
+            background: #ffffff;
+            padding: 1.5rem;
+            border-radius: 0.75rem;
+            border: 1px solid #e2e8f0;
+            display: flex;
+            align-items: center;
+            gap: 1.25rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
 
-#dining-text .list-item:hover {
-transform: translateY(-3px);
-box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-border-color: #c2410c;
-}
+        #dining-text .list-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            border-color: #c2410c;
+        }
 
-#dining-text .list-item strong {
-color: #7c2d12;
-font-size: 1.1rem;
-display: block;
-margin-bottom: 0.25rem;
-}
+        #dining-text .list-item strong {
+            color: #7c2d12;
+            font-size: 1.1rem;
+            display: block;
+            margin-bottom: 0.25rem;
+        }
 
-#dining-text .list-item span:last-child {
-flex: 1;
-line-height: 1.5;
-color: #4a5568;
-}
-
-/* Icon-specific colors */
-#dining-text .fa-utensils {
-color: #c2410c;  /* Restaurant */
-}
-
-#dining-text .fa-wine-glass {
-color: #9a3412;  /* Fine dining */
-}
-
-#dining-text .fa-mug-hot {
-color: #854d0e;  /* Cafe */
-}
-
-#dining-text .fa-ice-cream {
-color: #b45309;  /* Dessert */
-}
-
-/* Responsive styles for dining section */
-@media screen and (max-width: 768px) {
-#dining-text .list-item {
-    padding: 1rem;
-    flex-direction: column;
-    text-align: center;
-    gap: 0.75rem;
-}
-
-.dining-icon {
-    margin: 0 auto;
-}
-
-#dining-text .list-item strong {
-    font-size: 1rem;
-}
-
-#dining-text .list-item span:last-child {
-    font-size: 0.9rem;
-}
-}
-
-/* Active state for dining tab */
-.modal-nav-link[href="#dining"].active {
-background-color: #c2410c;
-color: #ffffff;
-}
-
-/* Hover state for dining items */
-#dining-text .list-item:hover .dining-icon {
-transform: scale(1.1);
-transition: transform 0.3s ease;
-}
-
-/* Additional spacing for dining section */
-#dining.tab-content {
-padding: 1rem 0;
-}
-
-#dining h3 {
-margin-bottom: 1.5rem;
-color: #7c2d12;
-font-size: 1.5rem;
-font-weight: 600;
-}
+        #dining-text .list-item span:last-child {
+            flex: 1;
+            line-height: 1.5;
+            color: #4a5568;
+        }
 
         /* Itinerary Styles */
         .itinerary-day {
@@ -4811,7 +4664,7 @@ font-weight: 600;
             flex-direction: column;
             justify-content: flex-start;
         }
-        
+
         .itinerary-day h4 {
             color: #1e40af;
             margin-bottom: 0.5rem;
@@ -4820,28 +4673,28 @@ font-weight: 600;
             line-height: 1.4;
             text-align: left;
         }
-        
+
         /* Itinerary Day Content */
         .itinerary-day .day-content {
-            font-size: 0.95rem;
+            font-size: 0.95rem; /* Adjusted font size for overview text */
             color: #333;
             line-height: 1.6;
             margin-bottom: 0.75rem;
             text-align: left;
         }
-        
+
         /* Tab Image Styles */
         .tab-image {
             height: 200px;
             margin-bottom: 5px;
         }
-        
+
         /* Tab Content */
         .tab-content {
             margin-top: 0;
             padding-top: 0px;
         }
-        
+
         /* Mobile-Specific Styles */
         @media screen and (max-width: 768px) {
             .itinerary-day {
@@ -4849,20 +4702,20 @@ font-weight: 600;
                 margin-bottom: 0.5rem;
                 width: 100%;
             }
-        
+
             .itinerary-day h4 {
                 font-size: 1rem;
                 margin-bottom: 0.25rem;
                 font-weight: 600;
                 text-align: left;
             }
-        
+
             .itinerary-day .day-content {
-                font-size: 0.875rem;
+                font-size: 0.9rem; /* Adjusted font size for mobile */
                 line-height: 1.5;
                 margin-bottom: 0.5rem;
             }
-        
+
             .modal-content {
                 margin: 0;
                 padding: 10px;
@@ -4872,29 +4725,29 @@ font-weight: 600;
                 scrollbar-width: thin;
                 -ms-overflow-style: scrollbar;
             }
-        
+
             .modal-header {
                 padding: 5px 10px;
                 margin-bottom: 10px;
                 background-color: #FFA500;
             }
-        
+
             .modal-title {
                 font-size: 20px;
                 margin: 0;
             }
-        
+
             .home-link {
                 font-size: 14px;
                 padding: 8px 16px;
             }
-        
+
             .modal-body {
                 flex-direction: column;
                 gap: 15px;
                 overflow: auto;
             }
-        
+
             .modal-sidebar {
                 flex: none;
                 width: 100%;
@@ -4902,7 +4755,7 @@ font-weight: 600;
                 margin-bottom: 10px;
                 overflow-x: auto;
             }
-        
+
             .modal-nav {
                 display: flex;
                 overflow-x: auto;
@@ -4913,14 +4766,18 @@ font-weight: 600;
                 position: relative;
                 overflow-y: auto;
             }
-        
+
             .modal-nav-link {
                 padding: 0.75rem 1rem;
                 font-size: 0.875rem;
                 white-space: nowrap;
             }
         }
-        
+
+        /* Make body height longer */
+        body {
+            min-height: 150vh; /* Increased body height */
+        }
     </style>
     </head>
     <body>
@@ -5771,6 +5628,7 @@ font-weight: 600;
     </script>
 </body>
 </html>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
