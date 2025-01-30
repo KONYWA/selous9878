@@ -349,283 +349,295 @@ header {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Discover who we are, our mission, and the team behind Mafoy Africa Safaris.">
     <title>About Us - Mafoy Africa Safaris</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <style>
-/* General reset and styling */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-            font-family: 'Montserrat', sans-serif;
-            line-height: 1.6;
-            color: #2c3e50;
-            animation: fadeInBody 1s ease-out; /* Fade in body */
-            zoom: 0.67; /* Sets the zoom level to 75% */
+        /* General reset and styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
-.about-container {
-    max-width: 1200px;
-    margin: 50px auto;
-    padding: 40px;
-    background-color: #ffffff;
-    border-radius: 20px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-    animation: fadeIn 1.5s ease-in-out;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-    border-top: 5px solid #2980b9; /* Decorative border */
-}
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+            animation: fadeInBody 1s ease-out;
+            zoom: 0.67;
+        }
 
-.about-container h1 {
-    font-size: 3.5rem;
-    margin-bottom: 20px;
-    color: #071c2a;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.15);
-    animation: slideInFromTop 1s ease-out;
-}
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            color: #d4af37; /* Golden color */
+        }
 
-.about-container p {
-    font-size: 1.2rem;
-    margin-bottom: 20px;
-    line-height: 1.8;
-    color: #555;
-    animation: fadeIn 2s ease-in-out;
-}
+        .about-container {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 40px;
+            background-color: #ffffff;
+            border-radius: 20px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 1.5s ease-in-out;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            border-top: 5px solid #d4af37; /* Golden border */
+        }
 
-.about-container p.highlight {
-    font-weight: bold;
-    color: #2980b9;
-    text-transform: uppercase;
-}
+        .about-container h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.15);
+            animation: slideInFromTop 1s ease-out;
+        }
 
-/* Animating text slide-in from the top */
-@keyframes slideInFromTop {
-    from {
-        transform: translateY(-50px);
-        opacity: 0;
-    }
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
+        .about-container p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            line-height: 1.8;
+            color: #555;
+            animation: fadeIn 2s ease-in-out;
+        }
 
-/* Excellence Section Styling */
-.excellence-section {
-    background: linear-gradient(to right, #2980b9, #8e44ad);
-    padding: 50px 20px;
-    margin: 40px 0;
-    border-radius: 15px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-    color: #fff;
-    text-align: center;
-    position: relative;
-    animation: fadeInUp 1.2s ease-out;
-}
+        .about-container p.highlight {
+            font-weight: bold;
+            color: #d4af37; /* Golden color */
+            text-transform: uppercase;
+        }
 
-.excellence-section::before {
-    content: '';
-    background: url('excellence-background.jpg') no-repeat center center/cover;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    opacity: 0.2;
-    z-index: -1;
-    border-radius: 15px;
-}
+        /* Animating text slide-in from the top */
+        @keyframes slideInFromTop {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
 
-.excellence-section h2 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-    color: #fff;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.5);
-}
+        /* Excellence Section Styling (Unchanged) */
+        .excellence-section {
+            background: linear-gradient(to right, #2980b9, #8e44ad);
+            padding: 50px 20px;
+            margin: 40px 0;
+            border-radius: 15px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+            color: #fff;
+            text-align: center;
+            position: relative;
+            animation: fadeInUp 1.2s ease-out;
+        }
 
-.excellence-point {
-    margin-bottom: 30px;
-    display: inline-block;
-    width: 200px;
-    text-align: center;
-}
+        .excellence-section::before {
+            content: '';
+            background: url('excellence-background.jpg') no-repeat center center/cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            opacity: 0.2;
+            z-index: -1;
+            border-radius: 15px;
+        }
 
-.excellence-point i {
-    font-size: 50px;
-    color: #fff;
-    background-color: #2980b9;
-    padding: 20px;
-    border-radius: 50%;
-    margin-bottom: 15px;
-    transition: transform 0.3s ease;
-}
+        .excellence-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.5);
+        }
 
-.excellence-point i:hover {
-    transform: scale(1.1);
-}
+        .excellence-point {
+            margin-bottom: 30px;
+            display: inline-block;
+            width: 200px;
+            text-align: center;
+        }
 
-.excellence-point h3 {
-    font-size: 1.4rem;
-    margin-top: 10px;
-    color: #fff;
-    text-transform: uppercase;
-}
+        .excellence-point i {
+            font-size: 50px;
+            color: #fff;
+            background-color: #2980b9;
+            padding: 20px;
+            border-radius: 50%;
+            margin-bottom: 15px;
+            transition: transform 0.3s ease;
+        }
 
-.excellence-point p {
-    font-size: 1.1rem;
-    color: #fff;
-    line-height: 1.6;
-}
+        .excellence-point i:hover {
+            transform: scale(1.1);
+        }
 
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
+        .excellence-point h3 {
+            font-size: 1.4rem;
+            margin-top: 10px;
+            color: #fff;
+            text-transform: uppercase;
+        }
 
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
+        .excellence-point p {
+            font-size: 1.1rem;
+            color: #fff;
+            line-height: 1.6;
+        }
 
-/* CEO Section Styling */
-.ceo-section {
-    background-color: #f9f9f9;
-    padding: 40px 20px;
-    margin: 50px 0;
-    border-radius: 15px;
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    animation: fadeInUp 1.5s ease-out;
-}
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
 
-.ceo-section img {
-    width: 200px;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 50%;
-    border: 5px solid #2980b9;
-    margin-bottom: 20px;
-    transition: transform 0.3s ease;
-}
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
 
-.ceo-section img:hover {
-    transform: scale(1.05);
-}
+        /* CEO Section Styling */
+        .ceo-section {
+            background-color: #f9f9f9;
+            padding: 40px 20px;
+            margin: 50px 0;
+            border-radius: 15px;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            animation: fadeInUp 1.5s ease-out;
+        }
 
-.ceo-section h3 {
-    font-size: 2rem;
-    color: #071c2a;
-    margin-bottom: 10px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
+        .ceo-section img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 5px solid #d4af37; /* Golden border */
+            margin-bottom: 20px;
+            transition: transform 0.3s ease;
+        }
 
-.ceo-section p {
-    font-size: 1.2rem;
-    color: #555;
-    line-height: 1.6;
-}
+        .ceo-section img:hover {
+            transform: scale(1.05);
+        }
 
-/* Offering Card Hover Effect */
-.offering-card:hover {
-    transform: translateY(-15px);
-    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.2);
-    background-color: #f1f1f1;
-}
+        .ceo-section h3 {
+            font-size: 2rem;
+            color: #071c2a;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
 
-/* Grid Layout for Offerings */
-.offerings {
-    margin-top: 40px;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* Adjusted */
-    gap: 20px;
-    justify-items: center; /* Centers items horizontally */
-    align-items: center;   /* Centers items vertically */
-    justify-content: center; /* Centers the entire grid content */
-    animation: fadeInUp 2s ease-out;
-}
+        .ceo-section p {
+            font-size: 1.2rem;
+            color: #555;
+            line-height: 1.6;
+        }
 
-/* Offering Card Styling */
-.offering-card {
-    background-color: #ffffff;
-    border-radius: 15px;
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
-    text-align: center;
-    padding: 20px;
-    position: relative;
-    border-bottom: 5px solid #2980b9; /* Bottom border for decoration */
-    display: flex;                  /* Ensures content is properly aligned */
-    flex-direction: column;         /* Stacks elements vertically */
-    align-items: center;            /* Centers content inside the card */
-    justify-content: space-between; /* Spreads out the content */
-}
+        /* Offering Card Hover Effect */
+        .offering-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 12px 36px rgba(0, 0, 0, 0.2);
+            background-color: #f1f1f1;
+        }
 
-.offering-card img {
-    width: 100%;
-    height: 250px;
-    object-fit: cover;
-    border-radius: 12px;
-    transition: transform 0.3s ease-in-out;
-}
+        /* Grid Layout for Offerings */
+        .offerings {
+            margin-top: 40px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* 3 cards per row */
+            gap: 20px;
+            justify-items: center; /* Centers items horizontally */
+            align-items: center;   /* Centers items vertically */
+            animation: fadeInUp 2s ease-out;
+            max-width: 1200px; /* Ensures the grid doesn't stretch too wide */
+            margin-left: auto; /* Centers the grid container */
+            margin-right: auto; /* Centers the grid container */
+        }
 
-.offering-card:hover img {
-    transform: scale(1.1);
-}
+        /* Center the last card if it's alone in the second row */
+        .offerings .offering-card:last-child:nth-child(3n + 1) {
+            grid-column: 2; /* Centers the last card */
+        }
 
-.offering-card .content {
-    padding: 15px;
-}
+        /* Offering Card Styling */
+        .offering-card {
+            background-color: #ffffff;
+            border-radius: 15px;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+            border-bottom: 5px solid #d4af37; /* Golden border */
+            display: flex;                  /* Ensures content is properly aligned */
+            flex-direction: column;         /* Stacks elements vertically */
+            align-items: center;            /* Centers content inside the card */
+            justify-content: space-between; /* Spreads out the content */
+            width: 100%; /* Ensures cards take full width of their grid cell */
+        }
 
-.offering-card .content h3 {
-    font-size: 1.6rem;
-    margin-bottom: 10px;
-    color: #071c2a;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
+        .offering-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 12px;
+            transition: transform 0.3s ease-in-out;
+        }
 
-.offering-card .content p {
-    font-size: 1.1rem;
-    color: #555;
-    line-height: 1.6;
-}
+        .offering-card:hover img {
+            transform: scale(1.1);
+        }
 
-/* Mobile Adjustments */
-@media (max-width: 768px) {
-    .about-container {
-        padding: 20px;
-    }
+        .offering-card .content {
+            padding: 15px;
+        }
 
-    .offerings {
-        grid-template-columns: 1fr;
-    }
+        .offering-card .content h3 {
+            font-size: 1.6rem;
+            margin-bottom: 10px;
+            color: #071c2a;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
 
-    .excellence-point {
-        width: 100%;
-    }
-}
+        .offering-card .content p {
+            font-size: 1.1rem;
+            color: #555;
+            line-height: 1.6;
+        }
 
+        /* Mobile Adjustments */
+        @media (max-width: 768px) {
+            .about-container {
+                padding: 20px;
+            }
+
+            .offerings {
+                grid-template-columns: 1fr;
+            }
+
+            .excellence-point {
+                width: 100%;
+            }
+        }
     </style>
 </head>
 <body>
@@ -639,7 +651,7 @@ body {
         </p>
 
         <!-- What We Offer Section -->
-        <div class="section-title" style="font-size: 2.5rem; margin: 40px 0; color: #2980b9; font-weight: bold; text-transform: uppercase;">
+        <div class="section-title" style="font-size: 2.5rem; margin: 40px 0; color: #d4af37; font-weight: bold; text-transform: uppercase;">
             What We Offer
         </div>
         <div class="offerings">
@@ -663,7 +675,7 @@ body {
 
             <!-- Cultural Tours -->
             <div class="offering-card">
-                <img src="hadzabe.jpg" alt="Cultural Tours">
+                <img src="hadzabe2.jpg" alt="Cultural Tours">
                 <div class="content">
                     <h3>Cultural Tours</h3>
                     <p>Experience the traditions and customs of Tanzania's indigenous tribes with authentic cultural experiences.</p>
@@ -679,8 +691,8 @@ body {
                 </div>
             </div>
         </div>
-<section>
-        <!-- Our Excellence Section -->
+
+        <!-- Our Excellence Section (Unchanged) -->
         <div class="excellence-section">
             <h2>Our Excellence</h2>
             <div class="excellence-point">
@@ -710,14 +722,9 @@ body {
         <p>
             Our team is passionate about making your Tanzanian safari dream a reality. Join us for an experience that will last a lifetime!
         </p>
-    </div></section>
-    
-    
+    </div>
 </body>
-
 </html>
-
-
     
 <!DOCTYPE html>
 <html lang="en">
