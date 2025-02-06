@@ -410,43 +410,68 @@ zoom: 0.67; /* Sets the zoom level to 75% */
             100% { opacity: 0; visibility: hidden; }
         }
 
-        /* WhatsApp Fixed Button */
-        .whatsapp-container {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            display: flex;
-            align-items: center;
-            background-color: #25D366;
-            color: white;
-            padding: 10px 20px;
-            border-radius: 40px;
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
-            z-index: 100;
-            font-size: 1rem;
-            text-decoration: none;
-            font-weight: bold;
-            transition: all 0.3s ease;
-            max-width: 80%;
+ /* Email Fixed Button */
+ .email-container {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        display: flex;
+        align-items: center;
+        background-color: #b77a2f; /* Darker golden orange background */
+        color: white; /* White text for better contrast */
+        padding: 10px 20px;
+        border-radius: 40px;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        z-index: 100;
+        font-size: 1rem;
+        text-decoration: none;
+        font-weight: bold;
+        transition: all 0.3s ease;
+        max-width: 80%;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .email-container:hover {
+        background-color: #9b6422; /* Even darker shade on hover */
+        transform: scale(1.05);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    }
+
+    .email-container .email-icon {
+        font-size: 1.5rem;
+        color: white;
+        margin-left: 10px;
+    }
+
+    .email-container span {
+        font-size: 1rem; /* Slightly larger text for better readability */
+    }
+
+    /* Media query for mobile view */
+    @media (max-width: 768px) {
+        .email-container {
+            padding: 10px 15px;
             justify-content: center;
-            text-align: center;
         }
+        .email-container span {
+            display: inline; /* Show the text "Email" */
+            font-size: 1rem; /* Keep the font size consistent */
+        }
+        .email-container .email-icon {
+            display: inline-block;
+            font-size: 1.5rem; /* Keep the icon visible */
+            margin-left: 10px; 
+        }
+    }
 
-        .whatsapp-container:hover {
-            background-color: #128C7E;
-            transform: scale(1.05);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    /* Hide the text on mobile devices larger than 768px */
+    @media (max-width: 480px) {
+        .email-container span {
+            display: inline; /* Only show the word 'Email' */
         }
+    }
 
-        .whatsapp-container .whatsapp-icon {
-            font-size: 1.5rem;
-            color: white;
-            margin-left: 10px;
-        }
-
-        .whatsapp-container span {
-            font-size: 0.9rem;
-        }
         .hero {
     height: 110vh;
     background-size: cover;
@@ -790,11 +815,18 @@ zoom: 0.67; /* Sets the zoom level to 75% */
                <a href="destinations.html" class="cta-button">Popular Safari Packages</a>
            </div>
        </section>
-  <!-- Email Contact Button -->
-<a href="mailto:your-email@example.com" target="_blank" style="position: fixed; bottom: 20px; right: 20px; display: flex; align-items: center; background-color: #0073e6; color: white; padding: 10px 20px; border-radius: 40px; box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3); z-index: 100; font-size: 1rem; text-decoration: none; font-weight: bold; transition: all 0.3s ease; max-width: 80%; justify-content: center; text-align: center;">
-    <span style="font-size: 0.9rem;">Contact via Email</span>
-    <i class="fas fa-envelope" style="font-size: 1.5rem; color: white; margin-left: 10px;"></i>
+   
+      <!-- Email Fixed Button -->
+<a href="mailto:info@mafoyafricaSafaris.com?subject=Inquiry from Website&body=Hello, I would like to inquire about your services."
+class="email-container">
+ <span>Contact via Email</span>
+ <i class="fas fa-envelope email-icon"></i>
 </a>
+
+<!-- Add FontAwesome link in the head if not already added -->
+<head>
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
 
        
 <!-- Our Excellence Section -->
@@ -899,135 +931,6 @@ zoom: 0.67; /* Sets the zoom level to 75% */
    </body>
    </html>
 
-   <!DOCTYPE html>
-   <html lang="en">
-   <head>
-       <meta charset="UTF-8">
-       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-       <title>Customize Your Safari - Mafoy Africa Safaris</title>
-       <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-       <style>
-           /* Global Styles */
-           body {
-               font-family: 'Roboto', sans-serif;
-               margin: 0;
-               padding: 0;
-               background-color: #f4f4f4;
-               color: #333;
-               line-height: 1.6;
-               text-align: center;
-           }
-   
-           .customize-section {
-               background-image: url('safari-background.jpg'); /* Add your background image */
-               background-size: cover;
-               background-position: center;
-               padding: 100px 20px;
-               color: #333; /* Dark text color */
-               text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.5); /* White shadow for better readability */
-           }
-   
-           .customize-section h1 {
-               font-family: 'Playfair Display', serif;
-               font-size: 4rem;
-               text-transform: uppercase;
-               margin: 0;
-               color: #d4af37; /* Golden color */
-           }
-   
-           .customize-section p {
-               font-size: 1.5rem;
-               margin: 20px 0 40px;
-               color: #555; /* Dark gray color */
-           }
-   
-           .cta-button {
-               display: inline-block;
-               padding: 15px 30px;
-               background-color: #ffa500; /* Orange color */
-               color: white;
-               text-decoration: none;
-               font-size: 1.2rem;
-               border-radius: 8px;
-               transition: background-color 0.3s ease;
-               box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
-               position: relative;
-               overflow: hidden;
-           }
-   
-           .cta-button::before {
-               content: '';
-               position: absolute;
-               top: -50%;
-               left: -50%;
-               width: 200%;
-               height: 200%;
-               background: linear-gradient(
-                   45deg,
-                   transparent,
-                   rgba(255, 255, 255, 0.5),
-                   transparent
-               );
-               transform: rotate(45deg);
-               animation: lightning 2s infinite;
-               z-index: 0;
-           }
-   
-           @keyframes lightning {
-               0% {
-                   opacity: 0;
-                   transform: rotate(45deg) translate(-50%, -50%);
-               }
-               50% {
-                   opacity: 1;
-               }
-               100% {
-                   opacity: 0;
-                   transform: rotate(45deg) translate(50%, 50%);
-               }
-           }
-   
-           .cta-button span {
-               position: relative;
-               z-index: 1;
-           }
-   
-           .cta-button:hover {
-               background-color: #d4af37; /* Golden color on hover */
-               transform: translateY(-2px);
-               box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
-           }
-   
-           .cta-button:active {
-               transform: translateY(0);
-               box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
-           }
-   
-           /* Responsive Design */
-           @media (max-width: 768px) {
-               .customize-section h1 {
-                   font-size: 2.5rem;
-               }
-   
-               .customize-section p {
-                   font-size: 1.2rem;
-               }
-   
-               .cta-button {
-                   padding: 12px 24px;
-                   font-size: 1rem;
-               }
-           }
-       </style>
-   </head>
-   <body>
-       <section class="customize-section">
-           <h1>CUSTOMIZE YOUR WAY</h1>
-           <p>TAILOR-MADE SAFARI EXPERIENCES</p>
-           <a href="customize_form.html" class="cta-button"><span>Start Customizing Now</span></a>
-       </section>
-   </body>
-   </html>
    <!DOCTYPE html>
    <html lang="en">
    <head>
@@ -2690,7 +2593,7 @@ zoom: 0.67; /* Sets the zoom level to 75% */
        
                            <div id="contact" class="tab-content">
                                <h3>Contact</h3>
-                               <p>For more details, contact us at <strong>innocentmgaleh@gmail.com</strong>.</p>
+                               <p>For more details, contact us at <strong>info@mafoyafricasafaris.com</strong>.</p>
                            </div>
                        </div>
                    </div>
@@ -4968,7 +4871,7 @@ h1 {
 
                 <div id="contact" class="tab-content">
                     <h3>Contact</h3>
-                    <p>For more details, contact us at <strong>innocentmgaleh@gmail.com</strong>.</p>
+                    <p>For more details, contact us at <strong>info@mafoyafricasafaris.com</strong>.</p>
                 </div>
             </div>
         </div>
