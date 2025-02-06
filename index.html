@@ -352,7 +352,6 @@ header {
     <title>Mafoya Africa Safaris - Discover Tanzania</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <style>
-        /* Your existing CSS styles */
         * {
             margin: 0;
             padding: 0;
@@ -363,82 +362,62 @@ header {
             font-family: 'Montserrat', sans-serif;
             line-height: 1.6;
             color: #2c3e50;
-            animation: fadeInBody 1s ease-out;
-            zoom: 0.67;
+            animation: fadeInBody 1s ease-out; /* Fade in body */
+            .zoom-structure {
+    transform: scale(0.67); /* Scales the content */
+    transform-origin: top left;
+}
+zoom: 0.67; /* Sets the zoom level to 75% */
+
+
+.zoom-structure a {
+    transform: scale(1.5); /* Rescales links to their original size */
+}
+
         }
 
-        .hero {
-            height: 110vh;
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: white;
-            position: relative;
-            padding: 20px 10px;
-            overflow: hidden;
-            animation: fadeInHero 1.5s ease-out;
-            background-image: url('king.jpg'); /* Replace with your image */
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 10;
-            background: rgba(0, 0, 0, 0.5);
-            padding: 3rem 2rem;
-            border-radius: 20px;
-            max-width: 1000px;
+        /* Loading Spinner */
+        .loading-spinner {
+            position: fixed;
+            top: 0;
+            left: 0;
             width: 100%;
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
-            animation: slideInUp 1s ease-out;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            animation: fadeOutSpinner 1s forwards;
         }
 
-        .hero-content h1 {
-            font-size: 3rem;
-            margin-bottom: 20px;
-            font-weight: bold;
-            letter-spacing: 2px;
-            animation: slideInUp 1s ease-out;
+        .spinner {
+            border: 8px solid #f3f3f3;
+            border-top: 8px solid #3498db;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 2s linear infinite;
         }
 
-        .hero-content p {
-            font-size: 1.2rem;
-            margin-bottom: 20px;
-            color: #FFD700;
-            animation: slideInUp 1s ease-out 0.5s;
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
         }
 
-        .cta-button {
-            padding: 1.2rem 2.5rem;
-            background-color: #FFD700;
-            color: #fff;
-            font-size: 1.2rem;
-            font-weight: bold;
-            border-radius: 50px;
-            text-decoration: none;
-            display: inline-block;
-            transition: all 0.3s ease;
-            border: 2px solid #FFD700;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        @keyframes fadeOutSpinner {
+            0% { opacity: 1; }
+            100% { opacity: 0; visibility: hidden; }
         }
 
-        .cta-button:hover {
-            background-color: #FF6347;
-            color: #fff;
-            transform: scale(1.05);
-        }
-
-        /* Email Fixed Button */
-        .email-container {
+        /* WhatsApp Fixed Button */
+        .whatsapp-container {
             position: fixed;
             bottom: 20px;
             right: 20px;
             display: flex;
             align-items: center;
-            background-color: #1E90FF; /* Blue color for email */
+            background-color: #25D366;
             color: white;
             padding: 10px 20px;
             border-radius: 40px;
@@ -453,37 +432,306 @@ header {
             text-align: center;
         }
 
-        .email-container:hover {
-            background-color: #0077cc; /* Darker blue on hover */
+        .whatsapp-container:hover {
+            background-color: #128C7E;
             transform: scale(1.05);
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
         }
 
-        .email-container .email-icon {
+        .whatsapp-container .whatsapp-icon {
             font-size: 1.5rem;
             color: white;
             margin-left: 10px;
         }
 
-        .email-container span {
+        .whatsapp-container span {
             font-size: 0.9rem;
+        }
+        .hero {
+    height: 110vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    position: relative;
+    padding: 20px 10px; /* Adjust padding for better mobile fit */
+    overflow: hidden;
+    animation: fadeInHero 1.5s ease-out; /* Hero section fade-in */
+    background-image: lio;
+}
+
+/* Responsive styling for mobile devices */
+@media (max-width: 768px) {
+    .hero {
+        height: 75vh; /* Adjust height for smaller screens */
+        padding-top: 10px; /* Reduce top padding */
+        padding-bottom: 10px; /* Reduce bottom padding */
+        text-align: center; /* Ensure text stays centered */
+    }
+}
+
+
+    /* Background Fade-in Animation */
+    @keyframes fadeInHero {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+
+    /* Hero Content Styling */
+.hero-content {
+    position: relative;
+    z-index: 10;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent black background for content */
+    padding: 3rem 2rem;
+    border-radius: 20px;
+    max-width: 1000px;
+    width: 100%;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+    animation: slideInUp 1s ease-out;
+}
+
+/* Hero Content Heading */
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    animation: slideInUp 1s ease-out;
+}
+
+/* Hero Content Paragraph */
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    color: #FFD700; /* Golden orange color for emphasis */
+    animation: slideInUp 1s ease-out 0.5s; /* Delayed */
+}
+
+/* Responsive Styling for Mobile Devices */
+@media (max-width: 768px) {
+    .hero-content {
+        padding: 2rem 1.5rem; /* Reduce padding for smaller screens */
+        border-radius: 15px; /* Slightly smaller border radius */
+        max-width: 1000%; /* Limit width for better fit */
+    }
+
+    .hero-content h1 {
+        font-size: 1rem; /* Smaller heading font size */
+        letter-spacing: 1.5px; /* Adjust letter spacing */
+    }
+
+    .hero-content p {
+        font-size: 1rem; /* Smaller paragraph font size */
+        margin-bottom: 15px; /* Adjust margin */
+    }
+}
+
+    /* Button Styling */
+    .cta-button {
+        padding: 1.2rem 2.5rem;
+        background-color: #FFD700; /* Golden orange button */
+        color: #fff;
+        font-size: 1.2rem;
+        font-weight: bold;
+        border-radius: 50px;
+        text-decoration: none;
+        display: inline-block;
+        transition: all 0.3s ease;
+        border: 2px solid #FFD700;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .cta-button:hover {
+        background-color: #FF6347; /* Slightly darker orange */
+        color: #fff;
+        transform: scale(1.05);
+    }
+
+    /* Slide-in Animation */
+    @keyframes slideInUp {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+        .hero-content h1 {
+            font-size: 2.5rem;
+        }
+
+        .hero-content p {
+            font-size: 1rem;
+        }
+
+        .cta-button {
+            font-size: 1rem;
+            padding: 0.8rem 1.5rem;
+        }
+    }
+        .cta-button {
+            display: inline-block;
+            background: #ffad1e;
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 1.5rem;
+            transition: all 0.3s ease;
+            font-size: 1.2rem;
+        }
+
+        .cta-button:hover {
+            background: #cc9200;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+        }/* Background Image */
+.background-slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1; /* Keeps the background behind other content */
+    background: url('king.jpg') no-repeat center/cover; /* Static background image */
+}
+
+
+/* Moving Clouds Layer */
+.clouds {
+    position: absolute;
+    top: 20%;
+    left: -200px;
+    width: 200%;
+    height: 100px;
+    background: url('king.jpg') repeat-x; /* Use a transparent cloud PNG */
+    animation: moveClouds 60s linear infinite; /* Smooth cloud movement */
+    opacity: 0.5; /* Subtle visibility for the clouds */
+    z-index: -1; /* Keeps clouds behind content but above the slider */
+}
+
+/* Keyframes for Cloud Movement */
+@keyframes moveClouds {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* Styling for a Subtle Overlay Effect */
+.background-slider::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6)); /* Gradient overlay */
+    z-index: -1; /* Overlay is above the background but below content */
+    pointer-events: none; /* Prevents interaction with the overlay */
+}
+
+
+        /* Section Styles */
+        .section {
+            padding: 2rem 1rem;
+            margin-bottom: 1rem;
+            background: rgba(255,255,255,0.9);
+            animation: fadeInSection 1s ease-out; /* Fade-in animation */
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 2.5rem;
+            color: #1E90FF;
+            position: relative;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .grid-item {
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,139,0.1);
+            padding: 1.5rem;
+            text-align: center;
+            transition: transform 0.3s ease;
+            border: 2px solid transparent;
+            height: 100%;
+            animation: fadeInUp 1s ease-out; /* Animation for grid items */
+        }
+
+        .grid-item:hover {
+            transform: translateY(-10px);
+            border-color: #1E90FF;
+        }
+
+        .grid-item-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: #1E90FF;
+        }
+
+        .destination-image {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 15px;
+            margin-bottom: 1.5rem;
+        }
+
+        .package-price {
+            font-weight: bold;
+            color: #1E90FF;
+            margin-top: 0.5rem;
         }
 
         @media (max-width: 768px) {
-            .hero-content h1 {
+            .hero h1 {
                 font-size: 2rem;
             }
 
-            .hero-content p {
-                font-size: 1rem;
+            .hero-content {
+                padding: 1.5rem;
             }
 
             .cta-button {
-                font-size: 1rem;
-                padding: 0.8rem 1.5rem;
+                padding: 10px 20px;
             }
 
-            .email-container {
+            .grid-container {
+                grid-template-columns: 1fr;
+            }
+
+            .grid-item {
+                margin-bottom: 1rem;
+            }
+
+            /* Adjust WhatsApp Button for Mobile */
+            .whatsapp-container {
                 padding: 10px 18px;
                 font-size: 0.85rem;
                 max-width: 90%;
@@ -494,35 +742,61 @@ header {
                 right: 20px;
             }
 
-            .email-container .email-icon {
+            .whatsapp-container .whatsapp-icon {
                 font-size: 1.3rem;
                 margin-left: 8px;
             }
 
-            .email-container span {
+            .whatsapp-container span {
                 font-size: 0.85rem;
             }
         }
-    </style>
-</head>
-<body>
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="background-slider"></div>
-        <div class="hero-content">
-            <h1>Discover Tanzania's Wild Beauty</h1>
-            <p style="color: #FFD700;">Choose, Compare, and Customize Your Perfect Safari</p>
-            <a href="destinations.html" class="cta-button">Popular Safari Packages</a>
-        </div>
-    </section>
 
-    <!-- Email Contact Button -->
-    <a href="mailto:info@mafoyafricaSafaris.com" class="email-container">
-        <span>Contact via Email</span>
-        <i class="fas fa-envelope email-icon"></i>
-    </a>
-</body>
-</html>
+        /* Animations */
+        @keyframes fadeInBody {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeInHero {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeInSection {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideInUp {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+   </head>
+   <body>
+       <!-- Hero Section -->
+       <section class="hero">
+           <div class="background-slider">
+           </div>
+           <div class="hero-content">
+               <h1>Discover Tanzania's Wild Beauty</h1>
+               <p style="color: #FFD700;">Choose, Compare, and Customize Your Perfect Safari</p>
+               <a href="destinations.html" class="cta-button">Popular Safari Packages</a>
+           </div>
+       </section>
+  <!-- Email Contact Button -->
+<a href="mailto:your-email@example.com" target="_blank" style="position: fixed; bottom: 20px; right: 20px; display: flex; align-items: center; background-color: #0073e6; color: white; padding: 10px 20px; border-radius: 40px; box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3); z-index: 100; font-size: 1rem; text-decoration: none; font-weight: bold; transition: all 0.3s ease; max-width: 80%; justify-content: center; text-align: center;">
+    <span style="font-size: 0.9rem;">Contact via Email</span>
+    <i class="fas fa-envelope" style="font-size: 1.5rem; color: white; margin-left: 10px;"></i>
+</a>
+
+       
 <!-- Our Excellence Section -->
 <section class="section">
     <div class="grid-container">
