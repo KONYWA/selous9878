@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mafoy africa Safaris | Luxury Safari Experience</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+      /* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f8f8f8;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header Section */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    color: #ffffff; /* White text */
+    background-color: #d99d42; /* Golden orange background for the header */
+    width: 100%; /* Ensure the golden orange color covers the entire width */
+    position: relative; /* Positioning for menu button inside header */
+}
+
+/* Logo */
+.logo {
+    display: flex;
+    align-items: center;
+    color: #ffffff; /* White text for logo */
+    background-color: #d99d42; /* Golden orange background for logo */
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.logo img {
+    width: 50px;
+    margin-right: 10px;
+}
+
+.logo span {
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+/* Mobile Menu Button */
+.menu-btn {
+    display: flex;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
+    position: absolute; /* Position absolutely inside the header */
+    right: 20px; /* Align the button to the right inside the header */
+    background-color: transparent; /* No background for the button itself */
+    padding: 10px; /* Add padding to make button area clickable */
+}
+
+.menu-btn div {
+    width: 30px;
+    height: 4px;
+    background-color: #ffffff; /* White color for mobile menu lines */
+}
+
+/* Mobile Navigation */
+.mobile-nav {
+    display: none;
+    flex-direction: column;
+    background-color: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+}
+
+.mobile-nav.active {
+    display: flex;
+}
+
+.mobile-nav ul {
+    list-style: none;
+    width: 100%;
+    padding: 0;
+}
+
+.mobile-nav ul li {
+    width: 100%;
+}
+
+.mobile-nav ul li a {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #333; /* Dark text color */
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.mobile-nav ul li a:hover {
+    background-color: #f4f4f4;
+    color: #b96329; /* Burnt orange color on hover */
+}
+
+/* Desktop View */
+@media (min-width: 769px) {
+    header {
+        padding: 10px 5%;
+        display: flex;
+        justify-content: space-between; /* Align logo and menu at opposite ends */
+        align-items: center;
+    }
+
+    .menu-btn {
+        display: none;
+    }
+
+    /* Hide Menu Text in desktop view */
+    .menu-text {
+        display: none;
+    }
+
+    /* Align the navigation to the right */
+    header nav {
+        margin-left: auto; /* Push navigation to the right */
+    }
+
+    header nav ul {
+        display: flex;
+        list-style: none;
+        gap: 20px;
+    }
+
+    header nav ul li {
+        position: relative;
+    }
+
+    header nav ul li a {
+        text-decoration: none;
+        color: #ffffff; /* White text for navigation items */
+        font-weight: 600;
+        transition: color 0.3s;
+    }
+
+    header nav ul li a:hover {
+        color: #b96329; /* Burnt orange color on hover */
+    }
+
+    /* Dropdown Styling */
+    .dropdown {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: white;
+        min-width: 200px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+    }
+
+    /* Show the dropdown when hovering over the parent */
+    header nav ul li:hover .dropdown {
+        display: block;
+    }
+
+    .dropdown li {
+        width: 100%;
+    }
+
+    .dropdown a {
+        display: block;
+        padding: 10px 15px;
+        color: #333;
+    }
+
+    .dropdown a:hover {
+        background-color: #f4f4f4;
+    }
+
+    /* Update logo background to golden orange for desktop view */
+    .logo {
+        background-color: #d99d42; /* Golden orange background for logo on desktop */
+        color: white; /* White text color for logo text */
+    }
+
+    .logo img {
+        width: 50px; /* Adjust logo size */
+        margin-right: 10px;
+    }
+
+    .logo span {
+        font-size: 1.6rem; /* Increase font size for better visibility */
+        font-weight: bold;
+    }
+}
+
+/* Mobile Specific Adjustments */
+@media (max-width: 768px) {
+    /* Make the entire header section golden orange on mobile */
+    header {
+        display: block;
+        padding: 0; /* Remove default padding */
+        background-color: #d99d42; /* Golden orange background for the entire header */
+        width: 100%; /* Make the golden orange background cover the entire width */
+    }
+
+    /* Logo on top of the header in mobile view with full-width golden orange background */
+    .logo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%; /* Full-width */
+        background-color: #ffffff; /* White background for logo part */
+        padding: 30px 0; /* Increased padding for larger header */
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow */
+    }
+
+    .logo img {
+        width: 60px; /* Adjust logo size */
+        margin-right: 10px;
+    }
+
+    .logo span {
+        font-size: 1.6rem; /* Increase font size for better visibility */
+        font-weight: bold;
+        color: #333; /* Dark text color for logo in mobile view */
+    }
+
+    /* Header section with mobile menu icon */
+    header nav {
+        display: none; /* Hidden by default */
+    }
+
+    /* Mobile Navigation visible when active */
+    .mobile-nav.active {
+        display: flex;
+    }
+
+    /* "Menu" Text */
+    .menu-text {
+        color: white;
+        font-size: 1.4rem;
+        font-weight: bold;
+        margin-left: 20px;
+    }
+
+    /* Dropdown menu visibility when "Tours" is clicked */
+    .mobile-nav ul li .dropdown {
+        display: none;
+    }
+
+    .mobile-nav ul li.active .dropdown {
+        display: block;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <!-- Header with Navigation -->
+    <header>
+        <!-- Logo (Visible in both mobile and desktop but different positioning) -->
+        <div class="logo">
+            <img src="mafoy2.jpg.png" alt="Mafoy africa Safaris">
+            <span>Mafoy africa Safaris</span>
+        </div>
+
+        <!-- Mobile Menu Button and "Menu" Text -->
+        <div class="menu-btn" onclick="toggleMobileMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <span class="menu-text">Menu</span> <!-- Menu Text added here -->
+
+        <!-- Desktop Navigation -->
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="destinations.html">Destinations</a></li>
+                <li class="tour-item">
+                    <a href="tours.html" onclick="toggleDropdown(event)">Tours</a>
+                    <ul class="dropdown">
+                        <li><a href="day-trips.html">Day Trip Packages</a></li>
+                        <li><a href="budget-tours.html">Budget Tour Packages</a></li>
+                        <li><a href="midrange-tours.html">Midrange Tour Packages</a></li>
+                        <li><a href="luxury-tours.html">Luxury Tour Packages</a></li>
+                        <li><a href="hiking.html">Hiking Packages</a></li>
+                        <li><a href="zanzibar-holidays.html">Zanzibar Holidays Packages</a></li>
+                    </ul>
+                </li>
+                <li><a href="about us.html">About us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Mobile Navigation -->
+    <nav class="mobile-nav">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="destinations.html">Destinations</a></li>
+            <li class="tour-item">
+                <a href="tours.html" onclick="toggleDropdown(event)">Tours</a>
+                <ul class="dropdown">
+                    <li><a href="day-trips.html">Day Trip Packages</a></li>
+                    <li><a href="budget-tours.html">Budget Tour Packages</a></li>
+                    <li><a href="midrange-tours.html">Midrange Tour Packages</a></li>
+                    <li><a href="luxury-tours.html">Luxury Tour Packages</a></li>
+                    <li><a href="hiking.html">Hiking Packages</a></li>
+                    <li><a href="zanzibar-holidays.html">Zanzibar Holidays Packages</a></li>
+                </ul>
+            </li>
+            <li><a href="about us.html">About us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <script>
+        // Toggle Mobile Menu
+        function toggleMobileMenu() {
+            document.querySelector('.mobile-nav').classList.toggle('active');
+        }
+
+        // Toggle Dropdown for "Tours"
+        function toggleDropdown(event) {
+            event.preventDefault();
+            const parentLi = event.target.parentElement;
+            parentLi.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customize Your Safari - Mafoy Africa Safaris</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+            zoom: 0.67;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            color: #d4af37;
+            text-align: center;
+            margin-top: 50px;
+            font-size: 2.5rem;
+        }
+
+        .form-container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 500;
+            margin-bottom: 8px;
+            color: #555;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: #d4af37;
+            outline: none;
+            box-shadow: 0 0 8px rgba(212, 175, 55, 0.2);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            height: 100px;
+        }
+
+        .submit-button {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background-color: #d4af37;
+            color: white;
+            font-size: 1.2rem;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .submit-button:hover {
+            background-color: #ffa500;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .form-container {
+                padding: 15px;
+            }
+
+            .form-group input,
+            .form-group select,
+            .form-group textarea {
+                padding: 10px;
+                font-size: 0.9rem;
+            }
+
+            .submit-button {
+                padding: 12px;
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Customize Your Safari</h1>
+    <div class="form-container">
+        <form action="submit_form.php" method="POST">
+            <!-- Question 1: Full Name -->
+            <div class="form-group">
+                <label for="full_name">Full Name:</label>
+                <input type="text" id="full_name" name="full_name" required>
+            </div>
+
+            <!-- Question 2: Email Address -->
+            <div class="form-group">
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <!-- Question 3: Phone Number -->
+            <div class="form-group">
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone">
+            </div>
+
+            <!-- Question 4: Preferred Safari Duration -->
+            <div class="form-group">
+                <label for="duration">Preferred Safari Duration:</label>
+                <select id="duration" name="duration" required>
+                    <option value="3-5 days">3-5 Days</option>
+                    <option value="6-8 days">6-8 Days</option>
+                    <option value="9+ days">9+ Days</option>
+                </select>
+            </div>
+
+            <!-- Question 5: Preferred Safari Type -->
+            <div class="form-group">
+                <label for="safari_type">Preferred Safari Type:</label>
+                <select id="safari_type" name="safari_type" required>
+                    <option value="Wildlife Safari">Wildlife Safari</option>
+                    <option value="Cultural Safari">Cultural Safari</option>
+                    <option value="Adventure Safari">Adventure Safari</option>
+                    <option value="Luxury Safari">Luxury Safari</option>
+                </select>
+            </div>
+
+            <!-- Question 6: Preferred Destinations -->
+            <div class="form-group">
+                <label for="destinations">Preferred Destinations:</label>
+                <textarea id="destinations" name="destinations" placeholder="e.g., Serengeti, Ngorongoro, Zanzibar"></textarea>
+            </div>
+
+            <!-- Question 7: Group Size -->
+            <div class="form-group">
+                <label for="group_size">Group Size:</label>
+                <input type="number" id="group_size" name="group_size" min="1" required>
+            </div>
+
+            <!-- Question 8: Budget Range -->
+            <div class="form-group">
+                <label for="budget">Budget Range (USD):</label>
+                <select id="budget" name="budget" required>
+                    <option value="1000-3000">$1,000 - $3,000</option>
+                    <option value="3000-5000">$3,000 - $5,000</option>
+                    <option value="5000+">$5,000+</option>
+                </select>
+            </div>
+
+            <!-- Question 9: Special Requests -->
+            <div class="form-group">
+                <label for="special_requests">Special Requests:</label>
+                <textarea id="special_requests" name="special_requests" placeholder="e.g., dietary restrictions, accessibility needs"></textarea>
+            </div>
+
+            <!-- Question 10: Preferred Travel Dates -->
+            <div class="form-group">
+                <label for="travel_dates">Preferred Travel Dates:</label>
+                <input type="date" id="travel_dates" name="travel_dates" required>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="submit-button">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
