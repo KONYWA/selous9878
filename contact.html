@@ -341,13 +341,13 @@ header {
     </script>
 </body>
 </html>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Mafoy Africa Safaris</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <style>
         /* Global Styles */
@@ -355,30 +355,21 @@ header {
             font-family: 'Roboto', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #ba9f3f0f; /* Background color for the whole page */
-            background-image: url('back.jpg'); /* Replace with the actual path to your image */
-            background-size: cover; /* Ensures the image covers the whole screen */
-            background-position: center center; /* Centers the background image */
-            background-repeat: no-repeat; /* Prevents the image from repeating */
-            color: #333; /* Dark text for better readability */
-            height: 95%;
-            display: flex;
-            flex-direction: column;
-            animation: backgroundAnimation 10s infinite linear; /* Animation applied to background */
-            zoom: 0.67; /* Sets the zoom level to 75% */
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+            zoom: 0.67;
         }
 
-        /* Keyframes for animating the background image */
-        @keyframes backgroundAnimation {
-            0% {
-                background-position: center center; /* Start at the center */
-            }
-            50% {
-                background-position: right bottom; /* Move to the right bottom */
-            }
-            100% {
-                background-position: center center; /* End back at the center */
-            }
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            color: #d4af37;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
         }
 
         /* Contact Section Styling */
@@ -386,16 +377,14 @@ header {
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
-            padding: 50px 20px;
             flex-wrap: wrap;
-            max-width: 1200px;
-            margin: 2rem auto;
             background-color: #fff;
             border-radius: 12px;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            margin: 2rem auto;
         }
 
-        /* Left Side - Contact Form */
         .contact-form {
             width: 48%;
             background-color: #ffffff;
@@ -410,7 +399,7 @@ header {
 
         .contact-form h2 {
             font-size: 2.2rem;
-            color: #d4af37; /* Golden color */
+            color: #d4af37;
             margin-bottom: 20px;
             text-align: center;
             text-transform: uppercase;
@@ -432,13 +421,13 @@ header {
         .contact-form input:focus,
         .contact-form select:focus,
         .contact-form textarea:focus {
-            border-color: #d4af37; /* Golden color */
+            border-color: #d4af37;
             outline: none;
-            box-shadow: 0 0 8px rgba(212, 175, 55, 0.2); /* Golden shadow */
+            box-shadow: 0 0 8px rgba(212, 175, 55, 0.2);
         }
 
         .contact-form button {
-            background-color: #d4af37; /* Golden color */
+            background-color: #d4af37;
             color: white;
             font-size: 1.2rem;
             font-weight: bold;
@@ -448,17 +437,15 @@ header {
         }
 
         .contact-form button:hover {
-            background-color: #ffa500; /* Orange color */
+            background-color: #ffa500;
         }
 
-        /* Right Side - Image of Tanzania and Contact Information */
         .right-side {
             width: 48%;
             position: relative;
             margin-top: 20px;
         }
 
-        /* Image Slider Container */
         .image-container {
             height: 350px;
             background-size: cover;
@@ -466,47 +453,31 @@ header {
             border-radius: 12px;
             margin-bottom: 20px;
             transition: transform 0.3s ease-in-out;
-            animation: slideImages 3s infinite alternate;
-            border: 5px solid #ddd; /* Light border for decoration */
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Shadow effect */
+            animation: slideImages 15s infinite;
+            border: 5px solid #ddd;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
         }
 
-        /* Animation for Image Sliding */
         @keyframes slideImages {
-            0% {
-                background-image: url('tanzania.jpg');
-            }
-            50% {
-                background-image: url('zanzibar.jpg'); /* Replace with actual image */
-            }
-            100% {
-                background-image: url('tanzania2.jpg');
-            }
-            100% {
-                background-image: url('lion.jpg');
-            }
-            100% {
-                background-image: url('beach3.jpg');
-            }
+            0% { background-image: url('tanzania.jpg'); }
+            25% { background-image: url('zanzibar.jpg'); }
+            50% { background-image: url('tanzania2.jpg'); }
+            75% { background-image: url('lion.jpg'); }
+            100% { background-image: url('beach3.jpg'); }
         }
 
-        .image-container:hover {
-            transform: scale(1.05);
-        }
-
-        /* Contact Information */
         .contact-info {
             background-color: #ffffff;
             padding: 30px;
             border-radius: 12px;
             box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
             text-align: center;
-            border: 2px solid #d4af37; /* Golden border */
+            border: 2px solid #d4af37;
         }
 
         .contact-info h3 {
             font-size: 1.8rem;
-            color: #d4af37; /* Golden color */
+            color: #d4af37;
             margin-bottom: 15px;
         }
 
@@ -517,31 +488,46 @@ header {
         }
 
         .contact-info a {
-            color: #d4af37; /* Golden color */
+            color: #d4af37;
             text-decoration: none;
             font-weight: bold;
             transition: color 0.3s ease;
         }
 
         .contact-info a:hover {
-            color: #ffa500; /* Orange color */
+            color: #ffa500;
         }
 
         .social-icons {
             margin-top: 15px;
             display: flex;
             justify-content: center;
+            gap: 15px;
         }
 
         .social-icons a {
             font-size: 2rem;
-            margin: 0 15px;
             color: #333;
             transition: color 0.3s ease;
         }
 
+        /* WhatsApp Color */
+        .social-icons a.fa-whatsapp {
+            color: #25D366;
+        }
+
+        /* Facebook Color */
+        .social-icons a.fa-facebook-square {
+            color: #1877F2;
+        }
+
+        /* Instagram Color */
+        .social-icons a.fa-instagram {
+            color: #E4405F;
+        }
+
         .social-icons a:hover {
-            color: #d4af37; /* Golden color */
+            opacity: 0.8;
         }
 
         /* Responsive Design */
@@ -551,14 +537,12 @@ header {
                 align-items: center;
             }
 
-            /* Ensure the contact form takes up the full width on mobile */
             .contact-form,
             .right-side {
-                width: 100%; /* Set to 100% for full width */
+                width: 100%;
                 margin-bottom: 20px;
             }
 
-            /* Adjust text sizes for mobile */
             .contact-form h2 {
                 font-size: 1.5rem;
             }
@@ -573,61 +557,57 @@ header {
         }
     </style>
 </head>
-<body><!-- Contact Form Section -->
-    <section class="contact-section">
-        <!-- Left Side Form -->
-        <div class="contact-form">
-            <h2>Book with Us</h2>
-            <form action="send_email.php" method="POST">
-                <input type="text" name="full_name" placeholder="Full Name" required>
-                <input type="email" name="email" placeholder="Email Address" required>
-                <input type="tel" name="phone" placeholder="Phone Number (Optional)">
-                <input type="text" name="tour_preference" placeholder="Preferred Safari Tour" required>
-                <select name="group_size" required>
-                    <option value="" disabled selected>Number of Travelers</option>
-                    <option value="1-2">1-2 Travelers</option>
-                    <option value="3-5">3-5 Travelers</option>
-                    <option value="6-10">6-10 Travelers</option>
-                    <option value="10+">10+ Travelers</option>
-                </select>
-                <textarea name="message" placeholder="Tell us about your dream safari experience" rows="5" required></textarea>
-                <input type="date" name="booking_date" required>
-                <button type="submit" name="submit">Send Inquiry</button>
-            </form>
-        </div>
-    </section>
-        </div>
+<body>
+    <div class="container">
+        <section class="contact-section">
+            <!-- Left Side Form -->
+            <div class="contact-form">
+                <h2>Book with Us</h2>
+                <form action="send_email.php" method="POST">
+                    <input type="text" name="full_name" placeholder="Full Name" required>
+                    <input type="email" name="email" placeholder="Email Address" required>
+                    <input type="tel" name="phone" placeholder="Phone Number (Optional)">
+                    <input type="text" name="tour_preference" placeholder="Preferred Safari Tour" required>
+                    <select name="group_size" required>
+                        <option value="" disabled selected>Number of Travelers</option>
+                        <option value="1-2">1-2 Travelers</option>
+                        <option value="3-5">3-5 Travelers</option>
+                        <option value="6-10">6-10 Travelers</option>
+                        <option value="10+">10+ Travelers</option>
+                    </select>
+                    <textarea name="message" placeholder="Tell us about your dream safari experience" rows="5" required></textarea>
+                    <input type="date" name="booking_date" required>
+                    <button type="submit" name="submit">Send Inquiry</button>
+                </form>
+            </div>
 
-        <!-- Right Side - Image and Contact Info -->
-        <div class="right-side">
-            <!-- Image Slider -->
-            <div class="image-container"></div>
-            <!-- Contact Information -->
-            <div class="contact-info">
-                <h3>Contact Information</h3>
-                <p>Call and WhatsApp: +255 692 208 654</p>
-                <p>Email: info@mafoyafricasafaris.com</p>
-                <p>Address: Arusha, Tanzania</p>
-                <div class="social-icons" style="display: flex; gap: 15px; flex-wrap: wrap;">
-                    <a href="https://www.facebook.com" target="_blank" aria-label="Facebook" style="text-decoration: none; font-size: 16px; color: inherit; display: flex; align-items: center; gap: 5px;">
-                        <i class="fab fa-facebook-square" style="color:#1877F2; font-size: 20px;"></i>
-                        <span>Facebook</span>
-                    </a>
-                    <a href="https://www.instagram.com" target="_blank" aria-label="Instagram" style="text-decoration: none; font-size: 16px; color: inherit; display: flex; align-items: center; gap: 5px;">
-                        <i class="fab fa-instagram" style="color:#C13584; font-size: 20px;"></i>
-                        <span>Instagram</span>
-                    </a>
-                    <a href="https://wa.me/+255692208654" target="_blank" aria-label="WhatsApp" style="text-decoration: none; font-size: 16px; color: inherit; display: flex; align-items: center; gap: 5px;">
-                        <i class="fab fa-whatsapp" style="color:#1ad760; font-size: 20px;"></i>
-                        <span>WhatsApp</span>
-                    </a>
+            <!-- Right Side - Image and Contact Info -->
+            <div class="right-side">
+                <!-- Image Slider -->
+                <div class="image-container"></div>
+                <!-- Contact Information -->
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    <p>Call and WhatsApp: +255 692 208 654</p>
+                    <p>Email: info@mafoyafricasafaris.com</p>
+                    <p>Address: Arusha, Tanzania</p>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com" target="_blank" aria-label="Facebook" class="fa-facebook-square">
+                            <i class="fab fa-facebook-square"></i>
+                        </a>
+                        <a href="https://www.instagram.com" target="_blank" aria-label="Instagram" class="fa-instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://wa.me/+255692208654" target="_blank" aria-label="WhatsApp" class="fa-whatsapp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </div>
 </body>
 </html>
-    
     <!DOCTYPE html>
     <html lang="en">
     <head>
