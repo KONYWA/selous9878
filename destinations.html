@@ -1181,7 +1181,6 @@ h1 {
   }
 }
 </style>    
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -1282,19 +1281,6 @@ h1 {
             letter-spacing: 1px;
         }
 
-        .package-price {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            background: rgba(255, 255, 255, 0.9);
-            padding: 8px 12px;
-            border-radius: 8px;
-            font-weight: bold;
-            color: #1a2a3b;
-            font-size: 0.9rem;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-
         .view-details-btn {
             display: inline-block;
             padding: 0.8rem 1.5rem;
@@ -1314,114 +1300,105 @@ h1 {
             background-color: #b96329;
             transform: scale(1.05);
         }
-/* Responsive Design for Small Screens */
-@media (max-width: 576px) {
-    .packages-grid {
-        grid-template-columns: 1fr; /* Single column layout */
-        gap: 10px; /* Slight gap for better separation */
-        padding: 10px; /* Add slight padding for better aesthetics */
-    }
 
-    .main-content {
-        padding: 10px; /* Add consistent padding for main content */
-        border-radius: 0; /* Remove border radius for a clean layout */
-    }
+        /* Responsive Design for Small Screens */
+        @media (max-width: 576px) {
+            .packages-grid {
+                grid-template-columns: 1fr; /* Single column layout */
+                gap: 10px; /* Slight gap for better separation */
+                padding: 10px; /* Add slight padding for better aesthetics */
+            }
 
-    .package-card {
-        height: 320px; /* Slightly taller for a balanced look */
-        width: 100%; /* Full width for cards */
-        margin: 0 0 10px 0; /* Add bottom margin for better spacing */
-        border-radius: 10px; /* Slightly rounded corners for a modern look */
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for an elevated look */
-        overflow: hidden; /* Ensure content fits within the fixed height */
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between; /* Evenly distribute content */
-    }
+            .main-content {
+                padding: 10px; /* Add consistent padding for main content */
+                border-radius: 0; /* Remove border radius for a clean layout */
+            }
 
-    .package-title {
-        font-size: 1.2rem; /* Optimized title size for readability */
-        font-weight: bold; /* Add emphasis to the title */
-        text-align: center; /* Center-align for better focus */
-        margin: 4px 0; /* Add spacing around the title */
-    }
+            .package-card {
+                height: 320px; /* Slightly taller for a balanced look */
+                width: 100%; /* Full width for cards */
+                margin: 0 0 10px 0; /* Add bottom margin for better spacing */
+                border-radius: 10px; /* Slightly rounded corners for a modern look */
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for an elevated look */
+                overflow: hidden; /* Ensure content fits within the fixed height */
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between; /* Evenly distribute content */
+            }
 
-    .package-price {
-        font-size: 1rem; /* Maintain original size for good visibility */
-        text-align: center; /* Align center for consistency */
-        margin-bottom: 10px; /* Add spacing below the price */
-    }
-    .view-details-btn {
-    font-size: 1rem; /* Professional font size */
-    padding: 10px 20px; /* Balanced padding for a better click area */
-    background-color: #FFA500; /* Golden orange background */
-    color: #fff; /* White text for contrast */
-    border: none; /* Clean design without borders */
-    border-radius: 5px; /* Rounded corners for a modern look */
-    text-align: center; /* Center-align text */
-    text-transform: uppercase; /* Use uppercase for a professional touch */
-    font-weight: bold; /* Bold text for emphasis */
-    cursor: pointer; /* Pointer cursor for interactivity */
-    transition: all 0.3s ease; /* Smooth transition for hover effects */
-    display: inline-block; /* Flexible inline display */
-    margin: 0 auto; /* Center-align button */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-}
+            .package-title {
+                font-size: 1.2rem; /* Optimized title size for readability */
+                font-weight: bold; /* Add emphasis to the title */
+                text-align: center; /* Center-align for better focus */
+                margin: 4px 0; /* Add spacing around the title */
+            }
 
-.view-details-btn:hover {
-    background-color: #FF8C00; /* Darker golden orange on hover */
-    transform: scale(1.05); /* Slightly enlarge for interactivity */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Enhance shadow for hover effect */
-}
+            .view-details-btn {
+                font-size: 1rem; /* Professional font size */
+                padding: 10px 20px; /* Balanced padding for a better click area */
+                background-color: #FFA500; /* Golden orange background */
+                color: #fff; /* White text for contrast */
+                border: none; /* Clean design without borders */
+                border-radius: 5px; /* Rounded corners for a modern look */
+                text-align: center; /* Center-align text */
+                text-transform: uppercase; /* Use uppercase for a professional touch */
+                font-weight: bold; /* Bold text for emphasis */
+                cursor: pointer; /* Pointer cursor for interactivity */
+                transition: all 0.3s ease; /* Smooth transition for hover effects */
+                display: inline-block; /* Flexible inline display */
+                margin: 0 auto; /* Center-align button */
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+            }
 
-}
+            .view-details-btn:hover {
+                background-color: #FF8C00; /* Darker golden orange on hover */
+                transform: scale(1.05); /* Slightly enlarge for interactivity */
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Enhance shadow for hover effect */
+            }
+        }
     </style>
-  </head>
-  <body>
-      <main class="main-content">
-          <h1>POPULAR DESTINATIONS </h1>
-          <div class="packages-grid">
-              <!-- Package Card 1 -->
-              <div class="package-card">
-                  <div class="package-image-container">
-                      <img src="hyena.jpg" alt="Safari Tour" class="package-image">
-                      <div class="package-price">From $1,400</div>
-                  </div>
-                  <div class="package-overlay">
-                      <h2 class="package-title">SERENGETI NATIONAL PARK</h2>
-                      <a href="#" class="view-details-btn" data-package="TOUR1">View Details</a>
-                  </div>
-              </div>
-  
-              <!-- Package Card 2 -->
-              <div class="package-card">
-                  <div class="package-image-container">
-                      <img src="lion.jpg" alt="Northern Circuit" class="package-image">
-                      <div class="package-price">From $1,750 </div>
-                  </div>
-                  <div class="package-overlay">
-                      <h2 class="package-title">NGORONGORO CRATER</h2>
-                      <a href="#" class="view-details-btn" data-package="TOUR2">View Details</a>
-                  </div>
-              </div>
-  
-              <!-- Package Card 3 -->
-              <div class="package-card">
-                  <div class="package-image-container">
-                      <img src="zebra2.jpg" alt="Tanzania Safari" class="package-image">
-                      <div class="package-price">From $1,850</div>
-                  </div>
-                  <div class="package-overlay">
-                      <h2 class="package-title">TARANGIRE NATIONAL PARK</h2>
-                      <a href="#" class="view-details-btn" data-package="TOUR3">View Details</a>
-                  </div>
-              </div>
-  
+</head>
+<body>
+    <main class="main-content">
+        <h1>POPULAR DESTINATIONS</h1>
+        <div class="packages-grid">
+            <!-- Package Card 1 -->
+            <div class="package-card">
+                <div class="package-image-container">
+                    <img src="hyena.jpg" alt="Safari Tour" class="package-image">
+                </div>
+                <div class="package-overlay">
+                    <h2 class="package-title">SERENGETI NATIONAL PARK</h2>
+                    <a href="#" class="view-details-btn" data-package="TOUR1">View Details</a>
+                </div>
+            </div>
+
+            <!-- Package Card 2 -->
+            <div class="package-card">
+                <div class="package-image-container">
+                    <img src="lion.jpg" alt="Northern Circuit" class="package-image">
+                </div>
+                <div class="package-overlay">
+                    <h2 class="package-title">NGORONGORO CRATER</h2>
+                    <a href="#" class="view-details-btn" data-package="TOUR2">View Details</a>
+                </div>
+            </div>
+
+            <!-- Package Card 3 -->
+            <div class="package-card">
+                <div class="package-image-container">
+                    <img src="zebra2.jpg" alt="Tanzania Safari" class="package-image">
+                </div>
+                <div class="package-overlay">
+                    <h2 class="package-title">TARANGIRE NATIONAL PARK</h2>
+                    <a href="#" class="view-details-btn" data-package="TOUR3">View Details</a>
+                </div>
+            </div>
+
             <!-- Package Card 4 -->
             <div class="package-card">
                 <div class="package-image-container">
                     <img src="leopard.jpg" alt="Adventure Safari" class="package-image">
-                    <div class="package-price">From $2,300</div>
                 </div>
                 <div class="package-overlay">
                     <h2 class="package-title">MANYARA NATIONAL PARK</h2>
@@ -1433,7 +1410,6 @@ h1 {
             <div class="package-card">
                 <div class="package-image-container">
                     <img src="elephant.jpg" alt="Safari Tour" class="package-image">
-                    <div class="package-price">From $2,100</div>
                 </div>
                 <div class="package-overlay">
                     <h2 class="package-title">RUAHA NATIONAL PARK</h2>
@@ -1445,7 +1421,6 @@ h1 {
             <div class="package-card">
                 <div class="package-image-container">
                     <img src="girrafe.jpg" alt="Luxury Safari" class="package-image">
-                    <div class="package-price">From $3,000</div>
                 </div>
                 <div class="package-overlay">
                     <h2 class="package-title">MIKUMI NATIONAL PARK</h2>
@@ -1457,7 +1432,6 @@ h1 {
             <div class="package-card">
                 <div class="package-image-container">
                     <img src="mbogo.jpg" alt="Exclusive Safari" class="package-image">
-                    <div class="package-price">From $3,500</div>
                 </div>
                 <div class="package-overlay">
                     <h2 class="package-title">ARUSHA NATIONAL PARK</h2>
@@ -1469,10 +1443,9 @@ h1 {
             <div class="package-card">
                 <div class="package-image-container">
                     <img src="beach3.jpg" alt="Adventure Safari" class="package-image">
-                    <div class="package-price">From $4,200</div>
                 </div>
                 <div class="package-overlay">
-                    <h2 class="package-title">ZANZIBAR </h2>
+                    <h2 class="package-title">ZANZIBAR</h2>
                     <a href="#" class="view-details-btn" data-package="TOUR8">View Details</a>
                 </div>
             </div>
@@ -1971,7 +1944,7 @@ h1 {
     const packageDetails = {
         'TOUR1': {
     overview: "The Serengeti in northern Tanzania is a world-famous wildlife destination known for its vast plains, diverse ecosystems, and the iconic **Great Migration**, where millions of animals move in search of grazing. Spanning 14,763 square kilometers, it is home to the **Big Five**, numerous predators, and over 500 bird species. A UNESCO World Heritage Site, the Serengeti offers unforgettable experiences, including game drives, hot air balloon safaris, and cultural visits with the Maasai people. Whether during the dry or green season, the Serengeti provides a breathtaking glimpse into the beauty of the wild.",
-    rates: "For the group option, the cost is $275 per person. For the private option, the cost is $450 per person, starting from a minimum of two participants.",
+    rates: "",
     inclusion: [
       "Park fees (For non-residents)",
       "All activities (Unless labeled as optional)",
@@ -1991,9 +1964,7 @@ h1 {
     ],
     endOfTours: "A transfer back to the airport can be arranged for an extra cost.",
     accommodation: [
-      { type: "meals", description: "5-star accommodation with premium amenities and stunning views", icon: "fa-star" },
-      { type: "Mid-Range Lodge", description: "Comfortable rooms with essential amenities and good service", icon: "fa-house" },
-      { type: "Budget Camping", description: "Basic camping facilities with shared amenities", icon: "fa-campground" }
+
     ],
     itinerary: [
       {
@@ -2006,7 +1977,7 @@ h1 {
   },
   'TOUR2': {
     overview: "The **Ngorongoro Conservation Area** in Tanzania is a UNESCO World Heritage Site, famous for the **Ngorongoro Crater**, a wildlife-rich volcanic caldera, and the **Olduvai Gorge**, a key archaeological site. Home to diverse animals like lions, elephants, and rhinos, it also hosts the Maasai people, who preserve their traditional lifestyle. With stunning landscapes, abundant wildlife, and rich history, Ngorongoro offers a unique and unforgettable experience.",
-    rates: "The group option is $320 per person. Private tours start at $500 per person (minimum of 2 participants).",
+    rates: "",
     inclusion: [
       "Park fees",
       "All activities (Unless labeled as optional)",
@@ -2023,8 +1994,7 @@ h1 {
     ],
     endOfTours: "Drop-off at your hotel or the airport is included.",
     accommodation: [
-      { type: "Luxury Lodge", description: "High-end lodge with exclusive services", icon: "fa-crown" },
-      { type: "Tented Camp", description: "Luxury tents in the heart of the Serengeti", icon: "fa-tent" }
+    
     ],
     itinerary: [
       {
@@ -2042,7 +2012,7 @@ h1 {
   },
   'TOUR3': {
     overview: "The **Tarangire National Park** in northern Tanzania is a wildlife-rich haven known for its majestic **baobab trees**, vast elephant herds, and seasonal swamps. Covering approximately 2,850 square kilometers, it is the sixth-largest park in Tanzania and offers diverse habitats, including grasslands, riverine forests, and wetlands. The **Tarangire River**, a vital water source during the dry season, attracts large numbers of animals, including elephants, zebras, wildebeests, giraffes, and predators like lions and leopards. The park is also a birdwatcher's paradise, with over 550 species recorded. Known for its tranquility and fewer crowds, Tarangire offers an authentic safari experience with spectacular wildlife viewing year-round.",
-    rates: "The group option costs $250 per person. Private tours start at $400 per person.",
+    rates: "",
     inclusion: [
       "Park entry fees",
       "Guided game drives",
@@ -2056,8 +2026,7 @@ h1 {
     ],
     endOfTours: "Drop-off at your hotel or Arusha is included.",
     accommodation: [
-      { type: "Safari Lodge", description: "A cozy lodge with panoramic views of Tarangire", icon: "fa-binoculars" },
-      { type: "Camping", description: "Basic camping experience with close proximity to nature", icon: "fa-campground" }
+  
     ],
     itinerary: [
       {
@@ -2070,7 +2039,7 @@ h1 {
   },
   'TOUR4': {
     overview: "**Lake Manyara National Park**, located in northern Tanzania, is a small but diverse park renowned for its stunning scenery and unique wildlife. Encompassing lush forests, open savannahs, and the alkaline **Lake Manyara**, the park is home to a wide range of animals, including elephants, giraffes, hippos, and the famous **tree-climbing lions**. The lake attracts thousands of flamingos and over 400 bird species, making it a paradise for birdwatchers. Despite its compact size, Lake Manyara offers diverse ecosystems and breathtaking views of the Rift Valley escarpment, providing a serene and picturesque safari experience.",
-    rates: "Starting at $200 per person.",
+    rates: "",
     inclusion: [
       "Cultural tour fees",
       "Guided village visits",
@@ -2083,7 +2052,6 @@ h1 {
     ],
     endOfTours: "Return to Arusha included.",
     accommodation: [
-      { type: "Lodge", description: "Comfortable lodge with local decor", icon: "fa-house" }
     ],
     itinerary: [
       {
@@ -2096,7 +2064,7 @@ h1 {
   },
   'TOUR5': {
     overview: "Ruaha National Park**, located in southern Tanzania, is the largest national park in the country, covering over 20,000 square kilometers. It is a remote and untouched wilderness, known for its dramatic landscapes, which include rugged hills, vast savannahs, and the **Great Ruaha River**, a lifeline for the park’s wildlife. Ruaha is home to an impressive variety of animals, including large populations of elephants, lions, leopards, cheetahs, and African wild dogs. It is also a haven for bird enthusiasts, with over 570 species recorded. The park’s solitude, diverse ecosystems, and abundant wildlife offer an authentic and off-the-beaten-path safari experience.",
-    rates: "$220 per person for a group tour, $400 for private tours.",
+    rates: "",
     inclusion: [
       "Park fees",
       "Game drives",
@@ -2110,7 +2078,6 @@ h1 {
     ],
     endOfTours: "Drop-off at your hotel in Arusha.",
     accommodation: [
-      { type: "Lodge", description: "Well-appointed lodge with views of the park", icon: "fa-tree" }
     ],
     itinerary: [
       {
@@ -2123,7 +2090,7 @@ h1 {
   },
   'TOUR6': {
     overview: "**Mikumi National Park**, located in southern Tanzania, is one of the country's most accessible wildlife parks, often referred to as a mini Serengeti due to its vast open plains and abundant wildlife. Spanning about 3,230 square kilometers, it is home to elephants, lions, giraffes, zebras, wildebeests, and hippos, among other animals. The park is also rich in birdlife, with over 400 species recorded. Mikumi’s proximity to Dar es Salaam makes it a popular choice for short safaris, offering stunning landscapes, including the Mkata Floodplain and the Uluguru Mountains. Its accessibility and diverse wildlife make it ideal for first-time safari-goers and nature enthusiasts.",
-    rates: "Starting at $180 per person.",
+    rates: "",
     inclusion: [
       "Park entry fees",
       "Transportation",
@@ -2135,7 +2102,6 @@ h1 {
     ],
     endOfTours: "Drop-off at your location.",
     accommodation: [
-      { type: "Day Tour", description: "No overnight accommodation", icon: "fa-clock" }
     ],
     itinerary: [
       {
@@ -2148,7 +2114,7 @@ h1 {
   },
   'TOUR7': {
     overview: "**Arusha National Park**, located in northern Tanzania, is a hidden gem known for its diverse ecosystems, stunning landscapes, and proximity to the city of Arusha. The park covers about 137 square kilometers and features a mix of rainforests, savannahs, and the dramatic **Mount Meru**, the second-highest mountain in Tanzania. Arusha National Park is home to a variety of wildlife, including giraffes, zebras, buffaloes, and a range of primates like the **black-and-white colobus monkeys**. It is also a fantastic birdwatching destination with over 400 species recorded. The park offers activities such as game drives, walking safaris, and trekking to the summit of Mount Meru, providing visitors with a unique combination of wildlife and adventure in a picturesque setting.",
-    rates: "Starting at $600 for a 3-day tour.",
+    rates: "",
     inclusion: [
       "Accommodation",
       "Meals",
@@ -2161,7 +2127,6 @@ h1 {
     ],
     endOfTours: "Airport transfer included.",
     accommodation: [
-      { type: "Resort", description: "Luxury beachfront resort", icon: "fa-umbrella-beach" }
     ],
     itinerary: [
       {
@@ -2174,7 +2139,7 @@ h1 {
   },
   'TOUR8': {
     overview: "**Zanzibar** is a stunning archipelago off the coast of Tanzania, known for its beautiful beaches, rich history, and vibrant culture. The main island, **Unguja**, features **Stone Town**, a UNESCO World Heritage Site, famous for its narrow streets and spice markets. Zanzibar is renowned for its **spice plantations** and offers activities like snorkeling, diving, and exploring **Jozani Forest**, home to endangered red colobus monkeys. With its blend of history, culture, and natural beauty, Zanzibar is a popular destination for both relaxation and adventure.",
-    rates: "The rate is: $330 Per Person (starting from 2 pax)",
+    rates: "",
     inclusion: [
       "Park entry fees",
       "Guided game drives",
@@ -2189,8 +2154,7 @@ h1 {
     ],
     endOfTours: "Transfer to the airport or your hotel can be arranged.",
     accommodation: [
-      { type: "Wilderness Camp", description: "Remote and eco-friendly camp...", icon: "fa-leaf" },
-      { type: "Katavi Lodge", description: "Comfortable lodge offering stunning views...", icon: "fa-house" }
+ 
     ],
     itinerary: [
       {
