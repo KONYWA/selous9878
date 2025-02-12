@@ -354,7 +354,7 @@ header {
             font-family: 'Roboto', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            background-color: #f8f8f8; /* Light grey background */
             color: #333;
             line-height: 1.6;
             zoom: 0.67;
@@ -362,30 +362,32 @@ header {
 
         h1 {
             font-family: 'Playfair Display', serif;
-            color: #d4af37;
+            color: #1A2A3A; /* Deep navy blue for the heading */
             text-align: center;
             margin-top: 50px;
             font-size: 2.5rem;
+            letter-spacing: 1px;
         }
 
         .form-container {
             max-width: 800px;
             margin: 20px auto;
-            padding: 20px;
+            padding: 30px;
             background-color: #fff;
             border-radius: 12px;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
         }
 
         .form-group {
-            margin-bottom: 20px;
+            margin-bottom: 25px;
         }
 
         .form-group label {
             display: block;
             font-weight: 500;
-            margin-bottom: 8px;
-            color: #555;
+            margin-bottom: 10px;
+            color: #1A2A3A; /* Deep navy blue for labels */
+            font-size: 1rem;
         }
 
         .form-group input,
@@ -393,32 +395,35 @@ header {
         .form-group textarea {
             width: 100%;
             padding: 12px;
-            border: 1px solid #ccc;
+            border: 1px solid #ddd;
             border-radius: 8px;
             font-size: 1rem;
-            transition: border-color 0.3s ease;
+            transition: all 0.3s ease;
+            background-color: #f9f9f9; /* Light grey background for inputs */
         }
 
         .form-group input:focus,
         .form-group select:focus,
         .form-group textarea:focus {
-            border-color: #d4af37;
+            border-color: #DAA520; /* Golden orange border on focus */
             outline: none;
-            box-shadow: 0 0 8px rgba(212, 175, 55, 0.2);
+            box-shadow: 0 0 8px rgba(218, 165, 32, 0.2); /* Subtle shadow */
+            background-color: #fff; /* White background on focus */
         }
 
         .form-group textarea {
             resize: vertical;
-            height: 100px;
+            height: 120px;
         }
 
         .submit-button {
             display: block;
             width: 100%;
             padding: 15px;
-            background-color: #d4af37;
+            background-color: #1A2A3A; /* Deep navy blue background */
             color: white;
             font-size: 1.2rem;
+            font-weight: 600;
             border: none;
             border-radius: 8px;
             cursor: pointer;
@@ -426,7 +431,7 @@ header {
         }
 
         .submit-button:hover {
-            background-color: #ffa500;
+            background-color: #DAA520; /* Golden orange on hover */
         }
 
         /* Responsive Design */
@@ -436,7 +441,7 @@ header {
             }
 
             .form-container {
-                padding: 15px;
+                padding: 20px;
             }
 
             .form-group input,
