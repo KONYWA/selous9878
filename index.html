@@ -2991,7 +2991,6 @@ class="email-container">
        </html>
    
 
-       
        <!DOCTYPE html>
        <html lang="en">
        <head>
@@ -3010,21 +3009,25 @@ class="email-container">
                }
        
                /* Section: Why Book With Us */
+               .why-book {
+                   padding: 60px 20px; /* Added padding for better spacing */
+               }
+       
                .why-book h2 {
-                   font-size: 3rem; /* Modern header size */
-                   margin-bottom: 40px;
-                   color: #d99d42; /* Golden Orange */
+                   font-size: 3rem;
+                   margin-bottom: 60px; /* Increased margin for more space */
+                   color: #d99d42;
                    text-align: center;
-                   font-family: 'Montserrat', sans-serif; /* Modern font */
+                   font-family: 'Montserrat', sans-serif;
                    font-weight: 700;
-                   letter-spacing: 1px; /* Slight letter spacing for elegance */
+                   letter-spacing: 1px;
                    text-transform: uppercase;
-                   text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+                   text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
                    animation: fadeIn 1s ease-out;
                    line-height: 1.2;
-                   white-space: nowrap; /* Ensure the heading stays in one line */
+                   white-space: nowrap;
                    overflow: hidden;
-                   text-overflow: ellipsis; /* Add ellipsis if text overflows */
+                   text-overflow: ellipsis;
                }
        
                .why-book h2::after {
@@ -3035,24 +3038,21 @@ class="email-container">
                    transform: translateX(-50%);
                    width: 120px;
                    height: 4px;
+                   background-color: #d99d42; /* Added color for visibility */
                    border-radius: 2px;
                }
        
                /* Row Styling */
                .row {
                    display: flex;
-                   justify-content: space-between;
-                   align-items: center;
-                   margin-bottom: 40px;
-                   gap: 20px;
+                   align-items: stretch; /* Ensure full height */
+                   margin-bottom: 60px; /* Increased margin for more space */
                    background: rgba(255, 255, 255, 0.97);
-                   border: 1px solid #d1d5db;
+                   border: 2px solid #d99d42; /* Added border for visibility */
                    border-radius: 15px;
                    overflow: hidden;
                    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
                    transition: all 0.3s ease;
-                   padding: 20px;
-                   width: 100%;
                }
        
                .row:hover {
@@ -3060,46 +3060,63 @@ class="email-container">
                    box-shadow: 0 25px 40px rgba(0, 0, 0, 0.15);
                }
        
-               /* Emoji Container */
-               .emoji-container {
-                   width: 25%;
+               /* Image Container */
+               .image-container {
+                   width: 30%; /* Adjust width as needed */
                    position: relative;
                    overflow: hidden;
-                   height: 300px;
-                   border-radius: 10px;
                    display: flex;
                    align-items: center;
                    justify-content: center;
-                   font-size: 8rem;
-                   background: rgba(255, 255, 255, 0.9);
-                   border: 1px solid #d1d5db;
-                   transition: all 0.3s ease;
+                   background: #f0f0f0; /* Added background for visibility */
+                   border-right: 2px solid #d99d42; /* Added border for visibility */
                }
        
-               .emoji-container:hover {
-                   background: rgba(255, 255, 255, 1);
-                   transform: translateY(-3px);
-                   border-color: #d99d42;
-               }
+               .image-container img {
+    width: 70%; /* Adjust width as needed */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: cover; /* Ensure the image covers the container */
+    border-radius: 10px; /* Add rounded corners */
+    display: block; /* Ensure proper alignment */
+    margin: 0 auto; /* Center the image horizontally */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Add a subtle shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
+}
+
+.image-container img:hover {
+    transform: scale(1.05); /* Slightly enlarge on hover */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2); /* Enhance shadow on hover */
+}
        
                /* Descriptions and Content */
                .descriptions-container {
                    flex: 1;
                    display: flex;
-                   justify-content: space-between;
-                   gap: 20px;
                    flex-wrap: wrap;
+                   gap: 30px; /* Increased gap for more space */
+                   padding: 40px; /* Increased padding for better spacing */
+                   background: #f9f9f9; /* Added background for visibility */
+               }
+       
+               .column {
+                   flex: 1;
+                   display: flex;
+                   flex-direction: column;
+                   gap: 30px; /* Increased gap for more space */
+                   border: 2px dashed #d99d42; /* Increased border thickness for visibility */
+                   padding: 20px; /* Increased padding for better spacing */
+                   border-radius: 10px;
+                   background: rgba(255, 255, 255, 0.9); /* Added background for visibility */
                }
        
                .content {
-                   flex: 1;
-                   padding: 25px;
+                   padding: 30px; /* Increased padding for better spacing */
                    display: flex;
                    flex-direction: column;
                    justify-content: center;
                    border-radius: 15px;
                    background: rgba(255, 255, 255, 0.9);
-                   border: 1px solid #d1d5db;
+                   border: 2px solid #d1d5db; /* Increased border thickness for visibility */
                    transition: all 0.3s ease;
                    text-align: center;
                }
@@ -3113,7 +3130,7 @@ class="email-container">
                .content h3 {
                    font-size: 1.8rem;
                    color: #1a202c;
-                   margin-bottom: 15px;
+                   margin-bottom: 20px; /* Increased margin for more space */
                    display: flex;
                    align-items: center;
                    gap: 15px;
@@ -3130,7 +3147,7 @@ class="email-container">
                    display: flex;
                    align-items: center;
                    justify-content: center;
-                   color: black;
+                   color: white; /* Changed color to white for better contrast */
                    font-size: 1.4rem;
                    box-shadow: 0 6px 18px rgba(217, 157, 66, 0.3);
                    transition: transform 0.3s ease;
@@ -3147,118 +3164,88 @@ class="email-container">
                    margin: 0;
                }
        
-               /* View Destinations Button */
-               .view-destinations {
-                   text-align: center;
-                   margin-top: 20px;
-               }
-       
-               .view-destinations a {
-                   display: inline-block;
-                   font-size: 1.4rem;
-                   color: #fff;
-                   background: #d99d42;
-                   padding: 18px 40px;
-                   text-decoration: none;
-                   border-radius: 8px;
-                   font-weight: 700;
-                   letter-spacing: 1px;
-                   box-shadow: 0 10px 20px rgba(217, 157, 66, 0.3);
-                   transition: all 0.3s ease;
-               }
-       
-               .view-destinations a:hover {
-                   transform: translateY(-3px);
-                   box-shadow: 0 15px 25px rgba(217, 157, 66, 0.4);
-               }
-       
-               .view-destinations a:focus,
-               .view-destinations a:active {
-                   text-decoration: none;
-               }
-       
                /* Responsive Design */
                @media (max-width: 1024px) {
                    .why-book h2 {
-                       font-size: 2.5rem; /* Slightly smaller font for tablet screens */
+                       font-size: 2.5rem;
                    }
        
                    .row {
                        flex-direction: column;
-                       gap: 20px;
                    }
        
-                   .emoji-container {
+                   .image-container {
                        width: 100%;
-                       height: 250px;
+                       height: 300px; /* Fixed height for smaller screens */
+                       border-right: none; /* Remove border on smaller screens */
+                       border-bottom: 2px solid #d99d42; /* Add border at the bottom */
                    }
        
-                   .content h3 {
-                       font-size: 1.6rem;
+                   .descriptions-container {
+                       flex-direction: column;
+                       gap: 20px; /* Adjusted gap for smaller screens */
+                       padding: 20px; /* Adjusted padding for smaller screens */
                    }
        
-                   .emoji {
-                       width: 45px;
-                       height: 45px;
-                       font-size: 1.3rem;
-                   }
-       
-                   .view-destinations a {
-                       font-size: 1.3rem;
-                       padding: 15px 30px;
+                   .column {
+                       border: 2px dashed #d99d42; /* Ensure border is visible on smaller screens */
                    }
                }
        
                @media (max-width: 600px) {
                    .why-book h2 {
-                       font-size: 1.8rem; /* Further reduced font size for smaller screens */
+                       font-size: 1.8rem;
                    }
        
-                   .view-destinations a {
-                       font-size: 1.2rem;
-                       padding: 15px 30px;
+                   .content {
+                       padding: 20px; /* Adjusted padding for smaller screens */
+                   }
+       
+                   .content h3 {
+                       font-size: 1.5rem; /* Adjusted font size for smaller screens */
                    }
                }
            </style>
        </head>
        <body>
            <div class="why-book">
-               <h2>Why Book With Us </h2>
+               <h2>Why Book With Us</h2>
        
+               <!-- Row 1 -->
                <div class="row">
-                   <div class="emoji-container">💎</div>
+                   <!-- Image on the left -->
+                   <div class="image-container">
+                       <img src="edu.jpg" alt="Placeholder Image">
+                   </div>
+                   <!-- Content on the right -->
                    <div class="descriptions-container">
-                       <div class="content">
-                           <h3><span class="emoji">💎</span> Great Value Deals</h3>
-                           <p>We ensure our clients get full value for the price paid and the best deals during their stay.</p>
+                       <!-- Column 1 -->
+                       <div class="column">
+                           <div class="content">
+                               <h3><span class="emoji">💎</span> Great Value Deals</h3>
+                               <p>We ensure our clients get full value for the price paid and the best deals during their stay.</p>
+                           </div>
+                           <div class="content">
+                               <h3><span class="emoji">✂️</span> 100% Customizable</h3>
+                               <p>Tell us your trip requirements, and we’ll tailor your trip to meet your exact needs.</p>
+                           </div>
                        </div>
-                       <div class="content">
-                           <h3><span class="emoji">✂️</span> 100% Customizable</h3>
-                           <p>Tell us your trip requirements, and we’ll tailor your trip to meet your exact needs.</p>
+                       <!-- Column 2 -->
+                       <div class="column">
+                           <div class="content">
+                               <h3><span class="emoji">📞</span> Quick Support</h3>
+                               <p>We provide assistance from planning through your entire stay in the country.</p>
+                           </div>
+                           <div class="content">
+                               <h3><span class="emoji">💳</span> Flexible Payments</h3>
+                               <p>We accept all payment methods, including credit cards, bank transfers, and cash.</p>
+                           </div>
                        </div>
                    </div>
-                   <div class="emoji-container">✈️</div>
                </div>
-       
-               <div class="row">
-                   <div class="descriptions-container">
-                       <div class="content">
-                           <h3><span class="emoji">📞</span> Quick Support</h3>
-                           <p>We provide assistance from planning through your entire stay in the country.</p>
-                       </div>
-                       <div class="emoji-container">🏞️</div>
-                       <div class="content">
-                           <h3><span class="emoji">💳</span> Flexible Payments</h3>
-                           <p>We accept all payment methods, including credit cards, bank transfers, and cash.</p>
-                       </div>
-                   </div>
-               </div>
-       
-             
            </div>
        </body>
        </html>
-
        
        <!DOCTYPE html>
        <html lang="en">
