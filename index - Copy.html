@@ -4926,24 +4926,19 @@ h1 {
         </style>
     </head>
     <body>
-       <!-- Package Details Modal -->
+<!-- Package Details Modal -->
 <div class="modal" id="package-modal">
     <div class="modal-content">
         <div class="modal-header">
             <h2 class="modal-title">Package Details</h2>
-            <a href="index.html" class="home-link">Home</a>
+            <a href="destinations.html" class="home-link">Home</a>
         </div>
         <div class="modal-body">
             <div class="modal-sidebar">
                 <ul class="modal-nav">
                     <li class="modal-nav-item"><a href="#overview" class="modal-nav-link active">Overview</a></li>
-                    <li class="modal-nav-item"><a href="#itinerary" class="modal-nav-link">Itinerary</a></li>
-                    <li class="modal-nav-item"><a href="#rates" class="modal-nav-link">Rates</a></li>
-                    <li class="modal-nav-item"><a href="#inclusion" class="modal-nav-link">Inclusion</a></li>
-                    <li class="modal-nav-item"><a href="#exclusion" class="modal-nav-link">Exclusion</a></li>
-                    <li class="modal-nav-item"><a href="#end-of-tours" class="modal-nav-link">End of Tours</a></li>
-                    <li class="modal-nav-item"><a href="#accommodation" class="modal-nav-link">Accommodation</a></li>
-                    <li class="modal-nav-item"><a href="#contact" class="modal-nav-link">Contact</a></li>
+                    <li class="modal-nav-item"><a href="#best-time" class="modal-nav-link">Best Time to Visit</a></li>
+                    <li class="modal-nav-item"><a href="#things-to-do" class="modal-nav-link">Things to Do</a></li>
                 </ul>
             </div>
             <div class="modal-main">
@@ -4954,367 +4949,184 @@ h1 {
                     <p id="overview-text"></p>
                 </div>
 
-                <div id="itinerary" class="tab-content">
-                    <h3>Itinerary</h3>
-                    <div id="itinerary-content"></div>
+                <div id="best-time" class="tab-content">
+                    <h3>Best Time to Visit</h3>
+                    <p id="best-time-text"></p>
                 </div>
 
-                <div id="rates" class="tab-content">
-                    <h3>Rates</h3>
-                    <p id="rates-text"></p>
-                </div>
-
-                <div id="inclusion" class="tab-content">
-                    <h3>Inclusion</h3>
-                    <div id="inclusion-text" class="list-container"></div>
-                </div>
-
-                <div id="exclusion" class="tab-content">
-                    <h3>Exclusion</h3>
-                    <div id="exclusion-text" class="list-container"></div>
-                </div>
-
-                <div id="end-of-tours" class="tab-content">
-                    <h3>End of Tours</h3>
-                    <p id="end-of-tours-text"></p>
-                </div>
-
-                <div id="accommodation" class="tab-content">
-                    <h3>Accommodation</h3>
-                    <div id="accommodation-text" class="list-container"></div>
-                </div>
-
-                <div id="contact" class="tab-content">
-                    <h3>Contact</h3>
-                    <p>For more details, contact us at <strong>innocentmgaleh@gmail.com</strong>.</p>
+                <div id="things-to-do" class="tab-content">
+                    <h3>Things to Do</h3>
+                    <div id="things-to-do-content"></div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-        <script>
-        document.addEventListener("DOMContentLoaded", function () {
-    const packageDetails = {
-        'TOUR1': {
-    overview: "The Serengeti in northern Tanzania is a world-famous wildlife destination known for its vast plains, diverse ecosystems, and the iconic **Great Migration**, where millions of animals move in search of grazing. Spanning 14,763 square kilometers, it is home to the **Big Five**, numerous predators, and over 500 bird species. A UNESCO World Heritage Site, the Serengeti offers unforgettable experiences, including game drives, hot air balloon safaris, and cultural visits with the Maasai people. Whether during the dry or green season, the Serengeti provides a breathtaking glimpse into the beauty of the wild.",
-    rates: "For the group option, the cost is $275 per person. For the private option, the cost is $450 per person, starting from a minimum of two participants.",
-    inclusion: [
-      "Park fees (For non-residents)",
-      "All activities (Unless labeled as optional)",
-      "A professional driver/guide",
-      "All transportation (Unless labeled as optional)",
-      "All Taxes/VAT",
-      "Meals (As specified in the day-by-day section)",
-      "Drinks (As specified in the day-by-day section)"
-    ],
-    exclusion: [
-      "International flights (From/to home)",
-      "Roundtrip airport transfer",
-      "Additional accommodation before and at the end of the tour",
-      "Tips (Tipping guideline US$10.00 pp per day)",
-      "Personal items (Souvenirs, travel insurance, visa fees, etc.)",
-      "Government imposed increase of taxes and/or park fees"
-    ],
-    endOfTours: "A transfer back to the airport can be arranged for an extra cost.",
-    accommodation: [
-      { type: "meals", description: "5-star accommodation with premium amenities and stunning views", icon: "fa-star" },
-      { type: "Mid-Range Lodge", description: "Comfortable rooms with essential amenities and good service", icon: "fa-house" },
-      { type: "Budget Camping", description: "Basic camping facilities with shared amenities", icon: "fa-campground" }
-    ],
-    itinerary: [
-      {
-        day: "Day 1",
-        title: "Day Description",
-        description: "You will be picked up from your hotel in Arusha between 6:00 AM and 7:00 AM to begin your journey to the Ngorongoro Crater..."
-      }
-    ],
-    images: { overview: "serengeti.jpg" }
-  },
-  'TOUR2': {
-    overview: "The **Ngorongoro Conservation Area** in Tanzania is a UNESCO World Heritage Site, famous for the **Ngorongoro Crater**, a wildlife-rich volcanic caldera, and the **Olduvai Gorge**, a key archaeological site. Home to diverse animals like lions, elephants, and rhinos, it also hosts the Maasai people, who preserve their traditional lifestyle. With stunning landscapes, abundant wildlife, and rich history, Ngorongoro offers a unique and unforgettable experience.",
-    rates: "The group option is $320 per person. Private tours start at $500 per person (minimum of 2 participants).",
-    inclusion: [
-      "Park fees",
-      "All activities (Unless labeled as optional)",
-      "Professional driver/guide",
-      "All transportation",
-      "Meals as specified in the itinerary",
-      "Drinks as specified in the itinerary"
-    ],
-    exclusion: [
-      "International flights",
-      "Airport transfers",
-      "Tips for guides",
-      "Personal items and insurance"
-    ],
-    endOfTours: "Drop-off at your hotel or the airport is included.",
-    accommodation: [
-      { type: "Luxury Lodge", description: "High-end lodge with exclusive services", icon: "fa-crown" },
-      { type: "Tented Camp", description: "Luxury tents in the heart of the Serengeti", icon: "fa-tent" }
-    ],
-    itinerary: [
-      {
-        day: "Day 1",
-        title: "Arrival and Game Drive",
-        description: "Upon arrival in Serengeti, you'll embark on an afternoon game drive, spotting wildlife and soaking in the stunning views."
-      },
-      {
-        day: "Day 2",
-        title: "Full-Day Safari",
-        description: "A full day of exploration in Serengeti, including the famous migration routes and predator hotspots."
-      }
-    ],
-    images: { overview: "serengeti.jpg" }
-  },
-  'TOUR3': {
-    overview: "The **Tarangire National Park** in northern Tanzania is a wildlife-rich haven known for its majestic **baobab trees**, vast elephant herds, and seasonal swamps. Covering approximately 2,850 square kilometers, it is the sixth-largest park in Tanzania and offers diverse habitats, including grasslands, riverine forests, and wetlands. The **Tarangire River**, a vital water source during the dry season, attracts large numbers of animals, including elephants, zebras, wildebeests, giraffes, and predators like lions and leopards. The park is also a birdwatcher's paradise, with over 550 species recorded. Known for its tranquility and fewer crowds, Tarangire offers an authentic safari experience with spectacular wildlife viewing year-round.",
-    rates: "The group option costs $250 per person. Private tours start at $400 per person.",
-    inclusion: [
-      "Park entry fees",
-      "Guided game drives",
-      "Meals as specified in the itinerary",
-      "All transportation"
-    ],
-    exclusion: [
-      "International flights",
-      "Personal expenses",
-      "Tips for guides"
-    ],
-    endOfTours: "Drop-off at your hotel or Arusha is included.",
-    accommodation: [
-      { type: "Safari Lodge", description: "A cozy lodge with panoramic views of Tarangire", icon: "fa-binoculars" },
-      { type: "Camping", description: "Basic camping experience with close proximity to nature", icon: "fa-campground" }
-    ],
-    itinerary: [
-      {
-        day: "Day 1",
-        title: "Game Drive in Tarangire",
-        description: "Enjoy a full day of game viewing, including elephants, giraffes, and various bird species."
-      }
-    ],
-    images: { overview: "tarangire.jpg" }
-  },
-  'TOUR4': {
-    overview: "**Lake Manyara National Park**, located in northern Tanzania, is a small but diverse park renowned for its stunning scenery and unique wildlife. Encompassing lush forests, open savannahs, and the alkaline **Lake Manyara**, the park is home to a wide range of animals, including elephants, giraffes, hippos, and the famous **tree-climbing lions**. The lake attracts thousands of flamingos and over 400 bird species, making it a paradise for birdwatchers. Despite its compact size, Lake Manyara offers diverse ecosystems and breathtaking views of the Rift Valley escarpment, providing a serene and picturesque safari experience.",
-    rates: "Starting at $200 per person.",
-    inclusion: [
-      "Cultural tour fees",
-      "Guided village visits",
-      "Lunch with a Maasai family",
-      "Transportation"
-    ],
-    exclusion: [
-      "Tips",
-      "Personal expenses"
-    ],
-    endOfTours: "Return to Arusha included.",
-    accommodation: [
-      { type: "Lodge", description: "Comfortable lodge with local decor", icon: "fa-house" }
-    ],
-    itinerary: [
-      {
-        day: "Day 1",
-        title: "Cultural Tour and Highlands Walk",
-        description: "Meet the Maasai community and explore the breathtaking Ngorongoro Highlands."
-      }
-    ],
-    images: { overview: "maasai.jpg" }
-  },
-  'TOUR5': {
-    overview: "Ruaha National Park**, located in southern Tanzania, is the largest national park in the country, covering over 20,000 square kilometers. It is a remote and untouched wilderness, known for its dramatic landscapes, which include rugged hills, vast savannahs, and the **Great Ruaha River**, a lifeline for the park’s wildlife. Ruaha is home to an impressive variety of animals, including large populations of elephants, lions, leopards, cheetahs, and African wild dogs. It is also a haven for bird enthusiasts, with over 570 species recorded. The park’s solitude, diverse ecosystems, and abundant wildlife offer an authentic and off-the-beaten-path safari experience.",
-    rates: "$220 per person for a group tour, $400 for private tours.",
-    inclusion: [
-      "Park fees",
-      "Game drives",
-      "Transportation",
-      "Meals"
-    ],
-    exclusion: [
-      "Tips",
-      "Personal items",
-      "Insurance"
-    ],
-    endOfTours: "Drop-off at your hotel in Arusha.",
-    accommodation: [
-      { type: "Lodge", description: "Well-appointed lodge with views of the park", icon: "fa-tree" }
-    ],
-    itinerary: [
-      {
-        day: "Day 1",
-        title: "Game Drive in Lake Manyara",
-        description: "Spot lions, elephants, and flamingos in the lush landscapes of Lake Manyara."
-      }
-    ],
-    images: { overview: "manyara.jpg" }
-  },
-  'TOUR6': {
-    overview: "**Mikumi National Park**, located in southern Tanzania, is one of the country's most accessible wildlife parks, often referred to as a mini Serengeti due to its vast open plains and abundant wildlife. Spanning about 3,230 square kilometers, it is home to elephants, lions, giraffes, zebras, wildebeests, and hippos, among other animals. The park is also rich in birdlife, with over 400 species recorded. Mikumi’s proximity to Dar es Salaam makes it a popular choice for short safaris, offering stunning landscapes, including the Mkata Floodplain and the Uluguru Mountains. Its accessibility and diverse wildlife make it ideal for first-time safari-goers and nature enthusiasts.",
-    rates: "Starting at $180 per person.",
-    inclusion: [
-      "Park entry fees",
-      "Transportation",
-      "Guided walks and game drives"
-    ],
-    exclusion: [
-      "Tips",
-      "Personal expenses"
-    ],
-    endOfTours: "Drop-off at your location.",
-    accommodation: [
-      { type: "Day Tour", description: "No overnight accommodation", icon: "fa-clock" }
-    ],
-    itinerary: [
-      {
-        day: "Day 1",
-        title: "Game Drive and Walking Safari",
-        description: "Explore the park on foot and by vehicle, enjoying diverse landscapes and wildlife."
-      }
-    ],
-    images: { overview: "lion.jpg" }
-  },
-  'TOUR7': {
-    overview: "**Arusha National Park**, located in northern Tanzania, is a hidden gem known for its diverse ecosystems, stunning landscapes, and proximity to the city of Arusha. The park covers about 137 square kilometers and features a mix of rainforests, savannahs, and the dramatic **Mount Meru**, the second-highest mountain in Tanzania. Arusha National Park is home to a variety of wildlife, including giraffes, zebras, buffaloes, and a range of primates like the **black-and-white colobus monkeys**. It is also a fantastic birdwatching destination with over 400 species recorded. The park offers activities such as game drives, walking safaris, and trekking to the summit of Mount Meru, providing visitors with a unique combination of wildlife and adventure in a picturesque setting.",
-    rates: "Starting at $600 for a 3-day tour.",
-    inclusion: [
-      "Accommodation",
-      "Meals",
-      "Transportation"
-    ],
-    exclusion: [
-      "Flights",
-      "Personal expenses",
-      "Activities not listed"
-    ],
-    endOfTours: "Airport transfer included.",
-    accommodation: [
-      { type: "Resort", description: "Luxury beachfront resort", icon: "fa-umbrella-beach" }
-    ],
-    itinerary: [
-      {
-        day: "Day 1-3",
-        title: "Beach Relaxation",
-        description: "Enjoy free time on the beach, optional water activities, and local cuisine."
-      }
-    ],
-    images: { overview: "serengeti national.jpg" }
-  },
-  'TOUR8': {
-    overview: "**Zanzibar** is a stunning archipelago off the coast of Tanzania, known for its beautiful beaches, rich history, and vibrant culture. The main island, **Unguja**, features **Stone Town**, a UNESCO World Heritage Site, famous for its narrow streets and spice markets. Zanzibar is renowned for its **spice plantations** and offers activities like snorkeling, diving, and exploring **Jozani Forest**, home to endangered red colobus monkeys. With its blend of history, culture, and natural beauty, Zanzibar is a popular destination for both relaxation and adventure.",
-    rates: "The rate is: $330 Per Person (starting from 2 pax)",
-    inclusion: [
-      "Park entry fees",
-      "Guided game drives",
-      "Meals as specified in the itinerary",
-      "Accommodation in a wilderness camp"
-    ],
-    exclusion: [
-      "International flights",
-      "Tips for guides",
-      "Personal expenses",
-      "Travel insurance"
-    ],
-    endOfTours: "Transfer to the airport or your hotel can be arranged.",
-    accommodation: [
-      { type: "Wilderness Camp", description: "Remote and eco-friendly camp...", icon: "fa-leaf" },
-      { type: "Katavi Lodge", description: "Comfortable lodge offering stunning views...", icon: "fa-house" }
-    ],
-    itinerary: [
-      {
-        day: "Day 1",
-        title: "Description",
-        description: "After breakfast at your hotel in Arusha..."
-      }
-    ],
-    images: { overview: "dorphine 2.png" }
+<script>
+   
+   document.addEventListener("DOMContentLoaded", function () {
+const packageDetails = {
+   'TOUR1': {
+       overview: "The Serengeti in northern Tanzania is a world-famous wildlife destination known for its vast plains, diverse ecosystems, and the iconic **Great Migration**. Each year, millions of wildebeests, zebras, and gazelles journey across the plains in search of grazing and water. This annual event is a natural spectacle that draws photographers, nature lovers, and safari enthusiasts from all over the globe. The Serengeti is also home to the 'Big Five' — lions, elephants, buffaloes, leopards, and rhinos, making it an ideal destination for those wanting to witness Africa's rich wildlife in its natural habitat.",
+       bestTime: "The best time to visit Serengeti is during the dry season, from June to October, when wildlife congregates around water sources, and the landscape is drier, making game viewing easier.",
+       thingsToDo: [
+           "Game drives to witness the Great Migration",
+           "Hot air balloon safaris for breathtaking aerial views",
+           "Visit Maasai villages to learn about their culture",
+           "Safari photography in the plains",
+           "Birdwatching to spot rare species",
+           "Night game drives to see nocturnal wildlife",
+           "Guided walks with a ranger for close encounters with nature"
+       ],
+       images: { overview: "serengeti.jpg" }
+   },
+   'TOUR2': {
+       overview: "The Ngorongoro Conservation Area in Tanzania is renowned for the Ngorongoro Crater, a unique and biodiverse volcanic caldera formed millions of years ago. The crater is a haven for wildlife, and with its lush vegetation, it provides the perfect environment for grazing herbivores and their predators. The region is also home to a variety of bird species, including flamingos in the crater’s soda lakes. In addition to the Crater, the Olduvai Gorge is a must-see. Known as the 'Cradle of Mankind,' it is where some of the earliest human fossils were discovered, providing visitors with a fascinating glimpse into human evolution.",
+       bestTime: "The best time to visit Ngorongoro is from June to October during the dry season, offering clear skies and great wildlife viewing opportunities, with the best chances of spotting the Big Five.",
+       thingsToDo: [
+           "Game drives in the Ngorongoro Crater to see wildlife",
+           "Visit the Olduvai Gorge to learn about early human history",
+           "Maasai cultural experiences",
+           "Birdwatching for flamingos and other species",
+           "Photography of the dramatic crater landscape",
+           "Walks with local guides to explore indigenous flora",
+           "Visit to the Ngorongoro Crater rim for panoramic views"
+       ],
+       images: { overview: "crator.jpg" }
+   },
+   'TOUR3': {
+       overview: "Tarangire National Park is a hidden gem in Tanzania, known for its towering baobab trees and vast herds of elephants that roam freely across the park’s landscape. It is also home to large populations of giraffes, zebras, and buffaloes, which are frequently seen near the seasonal swamps. Tarangire is particularly famous for its birdlife, attracting avid birdwatchers from all over the world. The park is also a great place for off-the-beaten-path safaris, offering visitors an opportunity to experience a less-crowded and more intimate wildlife experience.",
+       bestTime: "Visit Tarangire between June and October for the best wildlife sightings during the dry season when animals gather near the Tarangire River, creating great opportunities for game drives.",
+       thingsToDo: [
+           "Guided game drives to spot elephants and other wildlife",
+           "Birdwatching with guides to spot rare species",
+           "Elephant tracking to learn about their behavior",
+           "Visit the Tarangire River for close-up wildlife encounters",
+           "Photographic safaris for capturing stunning landscapes",
+           "Night safaris to spot nocturnal creatures",
+           "Explore the park’s iconic baobab trees"
+       ],
+       images: { overview: "tarangire.jpg" }
+   },
+   'TOUR4': {
+       overview: "Lake Manyara National Park is a beautiful, compact park known for its striking scenery and variety of wildlife. Famous for its tree-climbing lions and rich birdlife, it offers both exciting game drives and a chance to explore the local Maasai culture. The park's lush forests and the shores of Lake Manyara create a unique and diverse environment for wildlife. It is a great place for visitors looking for a mix of nature, adventure, and culture.",
+       bestTime: "The best time to visit is from June to October, during the dry season, when animals are more likely to gather near water sources, making game viewing easier.",
+       thingsToDo: [
+           "Game drives to see tree-climbing lions",
+           "Explore Maasai villages and learn about their traditions",
+           "Birdwatching along the lake for flamingos and other species",
+           "Photography of the scenic lake and wildlife",
+           "Hiking in the park’s lush forests",
+           "Visit to the Lake Manyara viewpoint for panoramic views",
+           "Cultural immersion experiences with local communities"
+       ],
+       images: { overview: "manyara.jpg" }
+   },
+   'TOUR5': {
+       overview: "Ruaha National Park is Tanzania's largest national park, known for its rugged hills, the Great Ruaha River, and its rich wildlife, including large elephant herds, lions, and rare species like the wild dog. The park's remoteness makes it perfect for visitors looking to experience a less crowded and more authentic safari. With breathtaking landscapes and fantastic wildlife sightings, Ruaha offers a true wilderness experience.",
+       bestTime: "The dry season, from June to October, is the best time to visit, as wildlife congregates near water sources, making game viewing easier.",
+       thingsToDo: [
+           "Game drives to observe wildlife in its natural habitat",
+           "Birdwatching, especially for raptors",
+           "Wildlife photography to capture unique landscapes and species",
+           "Exploring the Great Ruaha River and its wildlife",
+           "Night game drives to spot nocturnal predators",
+           "Nature walks with park rangers to learn about flora",
+           "Cultural experiences with the local tribes"
+       ],
+       images: { overview: "elephant.jpg" }
+   },
+   'TOUR6': {
+       overview: "Mikumi National Park is a hidden treasure that offers an accessible safari experience with fewer crowds. Known for its vast plains and impressive wildlife, including lions, elephants, and giraffes, Mikumi is often described as a 'mini Serengeti.' The park is perfect for those looking to experience Tanzania's wildlife and landscapes without the long travel times to more popular parks.",
+       bestTime: "The best time to visit Mikumi is from June to October, during the dry season, when animals are easier to spot due to the concentration around waterholes.",
+       thingsToDo: [
+           "Game drives to spot the 'Big Five'",
+           "Walking safaris with trained guides",
+           "Wildlife viewing in open plains",
+           "Photography safaris to capture stunning wildlife shots",
+           "Visit to the park’s waterholes for bird and animal sightings",
+           "Camping under the stars for an authentic safari experience",
+           "Cultural tours to learn about the local tribes"
+       ],
+       images: { overview: "lion.jpg" }
+   },
+   'TOUR7': {
+       overview: "Arusha National Park is a versatile destination that offers a mix of wildlife, stunning landscapes, and cultural experiences. With its stunning views of Mount Meru, the park is known for its diverse ecosystems, including rainforests and open savannahs. It’s an excellent place for both game drives and walking safaris, providing a unique perspective of Tanzania’s wildlife and natural beauty.",
+       bestTime: "The best time to visit is during the dry season, from June to October, when the weather is perfect for outdoor activities.",
+       thingsToDo: [
+           "Game drives to explore diverse ecosystems",
+           "Walking safaris through the park’s rainforests",
+           "Trekking to the summit of Mount Meru",
+           "Birdwatching for endemic species",
+           "Photography of the park's landscapes and wildlife",
+           "Cultural tours to interact with the Maasai people",
+           "Guided hikes to waterfalls within the park"
+       ],
+       images: { overview: "kilimanjaro.jpg" }
+   },
+   'TOUR8': {
+       overview: "Zanzibar is an idyllic tropical paradise known for its pristine beaches, rich culture, and historical significance. It offers visitors a mix of relaxation and adventure, with opportunities for snorkeling, diving, and exploring the spice plantations. Zanzibar’s Stone Town, a UNESCO World Heritage site, is a perfect place to explore history and culture, while the surrounding beaches provide an escape for those seeking peace and tranquility.",
+       bestTime: "Zanzibar is a year-round destination, but the best time to visit is during the dry season, from June to October, when the weather is perfect for beach activities.",
+       thingsToDo: [
+           "Snorkeling in the crystal-clear waters",
+           "Diving to explore vibrant coral reefs",
+           "Exploring the historical sites of Stone Town",
+           "Visiting the spice plantations for a cultural tour",
+           "Relaxing on the pristine beaches",
+           "Wildlife watching in Jozani Forest",
+           "Sunset dhow cruises for a romantic experience"
+       ],
+       images: { overview: "zanzibar.jpg" }
   }
 };
-    document.querySelectorAll('.view-details-btn').forEach(button => {
-        button.addEventListener('click', function (e) {
-            e.preventDefault();
-            const packageId = this.getAttribute('data-package');
-            const modal = document.getElementById('package-modal');
-            const packageData = packageDetails[packageId];
 
-            document.querySelector('#overview-text').textContent = packageData.overview;
-            document.querySelector('#rates-text').textContent = packageData.rates;
-            document.querySelector('#end-of-tours-text').textContent = packageData.endOfTours;
+document.querySelectorAll('.view-details-btn').forEach(button => {
+  button.addEventListener('click', function (e) {
+      e.preventDefault();
+      const packageId = this.getAttribute('data-package');
+      const modal = document.getElementById('package-modal');
+      const packageData = packageDetails[packageId];
 
-            const inclusionContent = document.querySelector('#inclusion-text');
-            inclusionContent.innerHTML = `
-                <ul class="custom-list">
-                    ${packageData.inclusion.map(item => `
-                        <li class="list-item">
-                            <span class="list-icon inclusion-icon">✓</span>
-                            <span>${item}</span>
-                        </li>
-                    `).join('')}
-                </ul>
-            `;
+      document.querySelector('#overview-text').textContent = packageData.overview;
+      document.querySelector('#best-time-text').textContent = packageData.bestTime;
 
-            const exclusionContent = document.querySelector('#exclusion-text');
-            exclusionContent.innerHTML = `
-                <ul class="custom-list">
-                    ${packageData.exclusion.map(item => `
-                        <li class="list-item">
-                            <span class="list-icon exclusion-icon">✗</span>
-                            <span>${item}</span>
-                        </li>
-                    `).join('')}
-                </ul>
-            `;
+      const thingsToDoContent = document.querySelector('#things-to-do-content');
+      thingsToDoContent.innerHTML = `
+          <ul class="custom-list">
+              ${packageData.thingsToDo.map(item => `
+                  <li class="list-item">
+                      <span class="list-icon">✓</span>
+                      <span>${item}</span>
+                  </li>
+              `).join('')}
+          </ul>
+      `;
 
-            const accommodationContent = document.querySelector('#accommodation-text');
-            accommodationContent.innerHTML = `
-                <ul class="custom-list">
-                    ${packageData.accommodation.map(item => `
-                        <li class="list-item">
-                            <span class="list-icon accommodation-icon">
-                                <i class="fas ${item.icon}"></i>
-                            </span>
-                            <span>
-                                <strong>${item.type}</strong>: ${item.description}
-                            </span>
-                        </li>
-                    `).join('')}
-                </ul>
-            `;
+      document.querySelector('.tab-image').src = packageData.images.overview;
 
-            document.querySelector('.tab-image').src = packageData.images.overview;
-
-            const itineraryContainer = document.getElementById('itinerary-content');
-            itineraryContainer.innerHTML = "";
-            packageData.itinerary.forEach(day => {
-                const dayElement = document.createElement('div');
-                dayElement.classList.add('itinerary-day');
-                dayElement.innerHTML = `
-                    <h4>${day.day}: ${day.title}</h4>
-                    <p>${day.description}</p>
-                `;
-                itineraryContainer.appendChild(dayElement);
-            });
-
-            modal.style.display = 'block';
-        });
-    });
-
-    document.querySelector('.home-link').addEventListener('click', function () {
-        document.getElementById('package-modal').style.display = 'none';
-    });
-
-    document.querySelectorAll('.modal-nav-link').forEach(link => {
-        link.addEventListener('click', function (e) {
-            e.preventDefault();
-            document.querySelectorAll('.modal-nav-link').forEach(navLink => navLink.classList.remove('active'));
-            this.classList.add('active');
-            document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
-            document.querySelector(this.getAttribute('href')).classList.add('active');
-        });
-    });
+      modal.style.display = 'block';
+  });
 });
-        </script>
-    </body>
-    </html>
- 
+
+document.querySelector('.home-link').addEventListener('click', function () {
+  document.getElementById('package-modal').style.display = 'none';
+});
+
+document.querySelectorAll('.modal-nav-link').forEach(link => {
+  link.addEventListener('click', function (e) {
+      e.preventDefault();
+      document.querySelectorAll('.modal-nav-link').forEach(navLink => navLink.classList.remove('active'));
+      this.classList.add('active');
+      document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+      document.querySelector(this.getAttribute('href')).classList.add('active');
+  });
+});
+});
+
+</script>
+</body>
+</html>
+
     
     <!DOCTYPE html>
     <html lang="en">
