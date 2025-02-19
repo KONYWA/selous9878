@@ -305,13 +305,7 @@ header {
         </nav>
     </header>
 
-    <!-- About Us Section -->
-    <section id="about-us">
-        <div style="text-align: center; padding: 50px 0;">
-            <h1>About Us</h1>
-            <p>Mafoy Africa Safaris is a premier safari and tour operator specializing in providing luxury safaris, adventure tours, and cultural experiences in Tanzania. Our mission is to deliver unforgettable and immersive travel experiences, offering the best of Africa's wildlife, nature, and culture. Whether you're looking for a thrilling safari or a peaceful retreat, we have a variety of packages tailored to suit every traveler.</p>
-        </div>
-    </section>
+   
 
     <!-- Mobile Navigation -->
     <nav class="mobile-nav">
@@ -633,39 +627,36 @@ header {
             line-height: 1.6;
         }
 
-        /* Mobile Adjustments */
-        @media (max-width: 768px) {
-            .about-container {
-                padding: 20px;
-            }
-
-           /* Mobile-only CSS */
-    @media (max-width: 768px) {
-        .offerings {
-            grid-template-columns: 1fr; /* Stack cards vertically on mobile */
-        }
-
-        .offering-card {
-            padding: 15px; /* Slightly reduce padding for mobile */
-        }
-
-        .offering-card img {
-            height: 200px; /* Reduce image height for mobile */
-        }
-
-        .offering-card .content h3 {
-            font-size: 1.4rem; /* Reduce heading size for mobile */
-        }
-
-        .offering-card .content p {
-            font-size: 1rem; /* Reduce paragraph size for mobile */
-        }
+      /* Mobile-friendly Offers Section */
+@media (max-width: 768px) {
+    .offerings {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px; /* Spacing between cards */
     }
 
-            .excellence-point {
-                width: 100%;
-            }
-        }
+    .offering-card {
+        width: 90%; /* Adjust card width for better alignment */
+        padding: 10px;
+    }
+
+    .offering-card img {
+        height: 180px; /* Adjusted image height */
+        border-radius: 10px;
+    }
+
+    .offering-card .content h3 {
+        font-size: 1.3rem;
+        margin-top: 10px;
+    }
+
+    .offering-card .content p {
+        font-size: 1rem;
+        text-align: center;
+    }
+}
+
     </style>
 </head>
 <body>
