@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mafoy africa Safaris | Luxury Safari Experience</title>
+    <title>Mafoy Africa Safaris | Luxury Safari Experience | Contact: +255 620 192 129</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
       /* Reset */
@@ -299,7 +299,8 @@ header {
                         <li><a href="zanzibar-holidays.html">Zanzibar Holidays Packages</a></li>
                     </ul>
                 </li>
-                <li><a href="about us.html">About us</a></li>
+                <li><a href="about-us.html">About Us</a></li>
+
                 <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
@@ -321,7 +322,7 @@ header {
                     <li><a href="zanzibar-holidays.html">Zanzibar Holidays Packages</a></li>
                 </ul>
             </li>
-            <li><a href="about us.html">About us</a></li>
+            <li><a href="about-us.html">About Us</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
     </nav>
@@ -394,13 +395,10 @@ header {
             margin-right: 20px;
             display: flex;
             flex-direction: column;
-            transition: all 0.3s ease;
         }
 
         .contact-form h2 {
             font-size: 2.2rem;
-            color: #d4af37;
-            margin-bottom: 20px;
             text-align: center;
             text-transform: uppercase;
         }
@@ -415,15 +413,6 @@ header {
             border: 1px solid #ccc;
             border-radius: 8px;
             font-size: 1rem;
-            transition: all 0.3s ease;
-        }
-
-        .contact-form input:focus,
-        .contact-form select:focus,
-        .contact-form textarea:focus {
-            border-color: #d4af37;
-            outline: none;
-            box-shadow: 0 0 8px rgba(212, 175, 55, 0.2);
         }
 
         .contact-form button {
@@ -433,7 +422,6 @@ header {
             font-weight: bold;
             cursor: pointer;
             border: none;
-            transition: background-color 0.3s ease;
         }
 
         .contact-form button:hover {
@@ -451,11 +439,9 @@ header {
             background-size: cover;
             background-position: center;
             border-radius: 12px;
-            margin-bottom: 20px;
-            transition: transform 0.3s ease-in-out;
-            animation: slideImages 15s infinite;
             border: 5px solid #ddd;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            animation: slideImages 15s infinite;
         }
 
         @keyframes slideImages {
@@ -475,62 +461,31 @@ header {
             border: 2px solid #d4af37;
         }
 
-        .contact-info h3 {
-            font-size: 1.8rem;
-            color: #d4af37;
-            margin-bottom: 15px;
-        }
-
-        .contact-info p {
-            font-size: 1.2rem;
-            margin-bottom: 15px;
-            color: #333;
-        }
-
-        .contact-info a {
-            color: #d4af37;
-            text-decoration: none;
-            font-weight: bold;
-            transition: color 0.3s ease;
-        }
-
-        .contact-info a:hover {
-            color: #ffa500;
-        }
-
-        .social-icons {
-            margin-top: 15px;
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-        }
-
         .social-icons a {
-            font-size: 2rem;
-            color: #333;
-            transition: color 0.3s ease;
-        }
+    font-size: 2rem;
+    transition: opacity 0.3s ease;
+}
 
-        /* WhatsApp Color */
-        .social-icons a.fa-whatsapp {
-            color: #25D366;
-        }
+/* Facebook Original Blue */
+.social-icons a.fa-facebook-square {
+    color: #1877F2;
+}
 
-        /* Facebook Color */
-        .social-icons a.fa-facebook-square {
-            color: #1877F2;
-        }
+/* Instagram Gradient */
+.social-icons a.fa-instagram {
+    color: #E4405F;
+}
 
-        /* Instagram Color */
-        .social-icons a.fa-instagram {
-            color: #E4405F;
-        }
+/* WhatsApp Green */
+.social-icons a.fa-whatsapp {
+    color: #25D366;
+}
 
-        .social-icons a:hover {
-            opacity: 0.8;
-        }
+.social-icons a:hover {
+    opacity: 0.8;
+}
 
-        /* Responsive Design */
+
         @media (max-width: 768px) {
             .contact-section {
                 flex-direction: column;
@@ -542,28 +497,15 @@ header {
                 width: 100%;
                 margin-bottom: 20px;
             }
-
-            .contact-form h2 {
-                font-size: 1.5rem;
-            }
-
-            .contact-info h3 {
-                font-size: 1.5rem;
-            }
-
-            .contact-info p {
-                font-size: 1rem;
-            }
         }
     </style>
 </head>
 <body>
     <div class="container">
         <section class="contact-section">
-            <!-- Left Side Form -->
             <div class="contact-form">
                 <h2>Book with Us</h2>
-                <form action="send_email.php" method="POST">
+                <form id="bookingForm" action="send_email.php" method="POST">
                     <input type="text" name="full_name" placeholder="Full Name" required>
                     <input type="email" name="email" placeholder="Email Address" required>
                     <input type="tel" name="phone" placeholder="Phone Number (Optional)">
@@ -580,27 +522,17 @@ header {
                     <button type="submit" name="submit">Send Inquiry</button>
                 </form>
             </div>
-
-            <!-- Right Side - Image and Contact Info -->
             <div class="right-side">
-                <!-- Image Slider -->
                 <div class="image-container"></div>
-                <!-- Contact Information -->
                 <div class="contact-info">
                     <h3>Contact Information</h3>
                     <p>Call and WhatsApp: +255 692 208 654</p>
                     <p>Email: info@mafoyafricasafaris.com</p>
                     <p>Address: Arusha, Tanzania</p>
                     <div class="social-icons">
-                        <a href="https://www.facebook.com" target="_blank" aria-label="Facebook" class="fa-facebook-square">
-                            <i class="fab fa-facebook-square"></i>
-                        </a>
-                        <a href="https://www.instagram.com" target="_blank" aria-label="Instagram" class="fa-instagram">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="https://wa.me/+255692208654" target="_blank" aria-label="WhatsApp" class="fa-whatsapp">
-                            <i class="fab fa-whatsapp"></i>
-                        </a>
+                        <a href="https://www.facebook.com" target="_blank" class="fa-facebook-square"><i class="fab fa-facebook-square"></i></a>
+                        <a href="https://www.instagram.com" target="_blank" class="fa-instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://wa.me/+255692208654" target="_blank" class="fa-whatsapp"><i class="fab fa-whatsapp"></i></a>
                     </div>
                 </div>
             </div>
@@ -608,6 +540,7 @@ header {
     </div>
 </body>
 </html>
+
     <!DOCTYPE html>
     <html lang="en">
     <head>
